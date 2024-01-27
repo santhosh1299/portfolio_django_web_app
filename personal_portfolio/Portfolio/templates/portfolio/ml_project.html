@@ -1,82 +1,96 @@
-{%extends 'portfolio/base.html'%}
+{% extends 'portfolio/base.html' %}
 
-{%block content%}
+{% block content %}
 {% load static %}
 
+<style>
+    body {
+        margin: 0;
+        font-family: 'Lato', sans-serif;
+        background-color: #f0f0f0;
+        overflow-x: hidden;
+    }
 
-<nav >
-    <a id = "side-heading" href="#section1">Section 1</a>
-    <a id = "side-heading" href="#section2">Section 2</a>
-    <a id = "side-heading" href="#section3">Section 3</a>
-    <a id = "side-heading" href="#section4">Section 4</a>
+    nav {
+        position: fixed;
+        top: 50%;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 2;
+    }
+
+    #side-heading {
+        color: #343a40;
+        text-decoration: none;
+        font-weight: normal;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    #side-heading:hover {
+        background-color: #343a40;
+        color: #fff;
+        transform: scale(1.05);
+    }
+
+    #side-heading.active {
+        font-weight: bold;
+    }
+
+    section {
+        padding: 20px;
+        text-align: center;
+        margin: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding-top: 70px;
+    }
+
+    section h2 {
+        font-weight: bold;
+    }
+</style>
+
+<nav>
+    
+    <a id="side-heading" href="#section1">Section 1</a>
+    <a id="side-heading" href="#section2">Section 2</a>
+    <a id="side-heading" href="#section3">Section 3</a>
+    <a id="side-heading" href="#section4">Section 4</a>
 </nav>
 
+<section id="sectionTitle"  style=" padding-top: 70px;" >
+    <h2><strong>Title</strong></h2>
+</section>
 
-
-<section id="section1" style="margin-top: 70px;">
+<section id="section1" ">
     <h2>Section 1</h2>
     <p>This is the content of Section 1.</p>
-    <br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
+    {% for _ in "x"|ljust:100 %}<br>{% endfor %}
 
 </section>
 
-<section id="section2">
+<section id="section2" >
     <h2>Section 2</h2>
     <p>This is the content of Section 2.</p>
-    <br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
+    {% for _ in "x"|ljust:100 %}<br>{% endfor %}
 
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
 </section>
+
 
 <section id="section3">
     <h2>Section 3</h2>
     <p>This is the content of Section 3.</p>
 </section>
 
-<section id="section4" style="margin-top: 70px;">
+<section id="section4">
     <h2>Section 4</h2>
-    <p>This is the content of Section 1.</p>
-    <br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
-
+    <p>This is the content of Section 4.</p>
 </section>
 
-    
-
-
-{%endblock%}
+{% endblock %}
