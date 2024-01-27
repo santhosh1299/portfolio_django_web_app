@@ -16,13 +16,80 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.side-heading').forEach(function (link) {
+          link.addEventListener('click', function (e) {
+              e.preventDefault();
 
+              var targetId = this.getAttribute('href').substring(1);
+              var targetSection = document.getElementById(targetId);
+
+              if (targetSection) {
+                  window.scrollTo({
+                      top: targetSection.offsetTop + 100, // Adjust as needed
+                      behavior: 'smooth',
+                  });
+
+                  // Mark the clicked link as active
+                  document.querySelectorAll('.side-heading').forEach(function (otherLink) {
+                      otherLink.classList.remove('active');
+                  });
+                  this.classList.add('active');
+              }
+          });
+      });
+  });
+</script>
 <link rel="stylesheet" href="{% static 'portfolio/custom.css' %}">
     <title>S A N</title>
+<!-- ml_project header-->
+
+<style>
+
+body {
+    margin: 0;
+}
+nav {
+    position: fixed;
+    top: 50%; /* Adjust as needed */
+    right: 20px;
+   
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2;
+}
+
+#side-heading {
+    color: #343a40;
+    text-decoration: none;
+    font-weight: normal;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+#side-heading:hover {
+    background-color: #343a40;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+#side-heading.active {
+    font-weight: bold;
+}
+
+
+</style>  
+
+<!-- ml_project ends-->
   </head>
   
   <body>
-      <nav id="topNav" class="navbar navbar-expand-lg navbar-light bg-light"> 
+      <nav id="topNav" class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;" > 
   <div class="container" >
         <a class="navbar-brand" href="{% url 'home' %}">
         <img src="{% static 'portfolio/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="SAN's Logo">
@@ -41,9 +108,7 @@
           <a class="nav-link" href="https://www.linkedin.com/in/santhosh-pm-689501176/" target="_blank">LinkedIn</a>
         </li>
        
-        <li class="nav-item">
-          <a class="nav-link " href="https://twitter.com/santhoshmano12"  target="_blank">Twitter</a>
-        </li>
+        
         <li class="nav-item">
             <a role="button" href="{% url 'blog:all_blogs' %}" class="btn btn-primary">Blog</a>
         </li>

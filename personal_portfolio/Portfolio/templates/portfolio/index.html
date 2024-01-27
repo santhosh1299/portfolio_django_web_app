@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="/static/portfolio/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bellota+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/static/portfolio/custom.css" />
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f8f9fa;
+        color: #343a40;
+        overflow-x: hidden;
+      }
+
+      header {
+        background-color: #343a40;
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+        margin-bottom: 30px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0)
+        );
+        z-index: -1;
+      }
+
+      nav {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 2;
+      }
+
+      nav a {
+        color: #343a40;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 15px;
+        transition: background-color 0.3s ease, color 0.3s ease,
+          transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      nav a:hover {
+        background-color: #343a40;
+        color: #fff;
+        transform: scale(1.05);
+      }
+
+      section {
+        padding: 40px;
+        text-align: justify;
+        background-color: #fff;
+        margin: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 1;
+        color: #495057;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      section h2 {
+        border-bottom: 2px solid #343a40;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        color: #343a40;
+      }
+
+      section p {
+        color: #6c757d;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .fadeIn {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .portfolio-item:hover {
+        transform: scale(1.05);
+      }
+
+      .portfolio-item img {
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+      }
+
+      .side-headings {
+        position: fixed;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 2;
+      }
+
+      .side-heading {
+        color: #343a40;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .side-heading:hover {
+        background-color: #343a40;
+        color: #fff;
+        transform: scale(1.05);
+      }
+
+      header {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+
+      @keyframes bounceIn {
+        0%,
+        20%,
+        40%,
+        60%,
+        80%,
+        100% {
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          transform: translateX(0);
+        }
+
+        40% {
+          transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          transform: translateX(-30px);
+        }
+
+        60% {
+          transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          transform: translateX(-15px);
+        }
+      }
+
+      .animated {
+        animation: bounceIn 1.5s ease-out;
+      }
+    </style>
+    <title>S A N</title>
+  </head>
+
+  <body>
+    <nav>
+      <a class="side-heading" href="#about">About</a>
+      <a class="side-heading" href="#projects">Projects</a>
+      <a class="side-heading" href="#contact">Contact</a>
+    </nav>
+
+    <header
+      style="background-image: url('/static/portfolio/background.jpg')"
+      class="animated"
+    >
+      <div class="row justify-content-center my-3">
+        <div>
+          <img
+            class="img-fluid"
+            src="/static/portfolio/santhosh_pic.PNG"
+            height="300"
+            width="300"
+            alt="Santhosh Image"
+          />
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-3">
+        <div class="col-md-9 text-center">
+          <h1 id="hometext" class="font-weight-bold">
+            Hello!😁 <br />I'm SANTHOSH <br />PATTAMUDU MANOHARAN
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <section id="about" class="fadeIn">
+      <h2>About Me</h2>
+      <p>Your about me content goes here.</p>
+    </section>
+
+    <section id="projects" class="fadeIn">
+      <h2>Projects</h2>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 portfolio-item">
+          <a
+            href="https://github.com/santhosh1299/Password_generator_Django"
+            target="_blank"
+          >
+            <div class="portfolio-item">
+              <img
+                src="/media/Portfolio/images/password.jpg"
+                class="img-fluid mb-2 rounded"
+                alt="Project Image"
+              />
+              <h3>Password Generator</h3>
+              <p>
+                Create a secure password using our generator tool. Help prevent
+                a security threat by getting a strong password
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- Add other project items similarly -->
+      </div>
+    </section>
+
+    <section id="contact" class="fadeIn">
+      <h2>Contact</h2>
+      <!-- Add your contact form or information here -->
+    </section>
+
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      document.addEventListener("scroll", function () {
+        let sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+          if (window.scrollY + window.innerHeight > section.offsetTop) {
+            section.classList.add("fadeIn");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -23,8 +23,9 @@ from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home,name='home' ),
-    path('blog/',include('Blog.urls'))
-    ,
+    path('blog/',include('Blog.urls')),
+    path('ml_project', views.ml_project,name='ml_project' )
+    
 
 ]
 urlpatterns +=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
