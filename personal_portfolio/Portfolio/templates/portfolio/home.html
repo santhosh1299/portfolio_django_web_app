@@ -26,7 +26,8 @@
     {%if project.url %}
     
     <a href="{{ project.url }}">
-        <img src="{{ project.image.url }}" class="img-fluid mb-2 rounded">
+        <img src="{{ project.image.url }}" class="img-fluid mb-2 rounded custom-image" alt="Project Image">
+
     </a>
     {% else %}
     <img src="{{ project.image.url }}" class="img-fluid mb-2 rounded">
