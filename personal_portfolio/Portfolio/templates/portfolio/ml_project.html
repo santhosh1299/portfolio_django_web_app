@@ -88,6 +88,13 @@
     background-color: #555;
 }
 
+h2.title {
+        font-size: 3em; /* Adjust the font size as needed */
+        font-weight: bold;
+        color: #333; /* Set the color as needed */
+        text-align: center; /* Center the text */
+        margin-bottom: 20px; /* Add margin at the bottom for spacing */
+    }
 
 
 </style>
@@ -106,14 +113,51 @@
     <a id="side-heading" href="#section10">Conclusion</a>
 </nav>
 
-<section id="sectionTitle"  style=" padding-top: 70px;" >
-    <h2><strong>Title</strong></h2>
+<section  id="sectionTitle"  style=" padding-top: 70px;" >
+    <h2 class="title" ><strong>Lithium Ion Battery Discharge Capacity Prediction <br>And<br> Analysis of Charge Cycling</strong></h2>
 </section>
 
 <section id="section1" ">
-    <h2>Introduction</h2>
-    <p>Battery Lithium Ion</p>
-    {% for _ in "x"|ljust:100 %}<br>{% endfor %}
+    <h2 class ="section-heading" >Introduction</h2>
+    <p>
+        "Lithium-ion battery maintenance is a crucial aspect that underscores the potential disastrous consequences and the heavy reliance of expensive systems on proper care. This holds particularly true for a myriad of applications, spanning from everyday devices like phones and laptops to essential components in vehicles and servers. The significance of maintaining lithium-ion batteries cannot be overstated, as these power sources are integral to the seamless operation of our technological landscape.
+    
+        As we navigate the interconnected world of smartphones, electric cars, portable computers, and server farms, the importance of understanding and practicing effective lithium-ion battery maintenance becomes evident. Ensuring the longevity and optimal performance of these batteries is not only a matter of convenience but a fundamental requirement for the sustained functionality of the devices and systems they power.
+    
+        News and developments in the field of lithium-ion battery maintenance continually emerge, reflecting the ongoing efforts to enhance performance, safety, and environmental sustainability. Implementing proper maintenance practices not only safeguards against potential disasters such as overheating or malfunction but also contributes to the overall efficiency and reliability of the systems in which these batteries are employed.
+    
+        Stay informed about the latest advancements, guidelines, and best practices in lithium-ion battery maintenance to make informed decisions and promote a sustainable and efficient technological ecosystem."
+    </p>
+    <img src="https://ul.org/sites/default/files/inline-images/Lithium%20Ion%20Cell%203.png" alt="Lithium Ion Battery" width="750" height="465">
+    <p> Source:https://ul.org/research/electrochemical-safety/getting-started-electrochemical-safety/what-are-lithium-ion </p>
+    <p>
+        The charging cycle was meticulously executed in a controlled laboratory setting, employing a well-established protocol. The process commenced with a constant current (CC) mode at 1.5A until the battery voltage reached a precise 4.2V. Subsequently, the charging transitioned seamlessly into a constant voltage (CV) mode, persisting until the charge current dwindled to a minimal 20mA. This intricate procedure ensures the lithium-ion batteries are methodically charged, aligning with the stringent requirements of the experiment.
+    
+        For the discharge phase, a constant current (CC) level of 2A was applied with precision. The discharge continued until the battery voltage gracefully descended to predefined levels: 2.7V, 2.5V, 2.2V, and 2.5V for batteries 5, 6, 7, and 18, respectively. Each discharge cycle meticulously simulated real-world usage scenarios, capturing the dynamic behavior of the batteries under varying conditions.
+    
+        The iterative charge and discharge cycles intentionally induced accelerated aging of the batteries, offering a unique vantage point into their long-term performance characteristics. Concurrent impedance measurements provided invaluable insights into the evolving internal parameters of the batteries throughout the aging process. This dual approach allowed for a comprehensive understanding of how the batteries' performance and characteristics transformed over repeated cycles.
+    
+        The experiments adhered to rigorous standards and were meticulously monitored until the batteries reached their predefined end-of-life (EOL) criteria. This comprehensive methodology ensures that the obtained data accurately reflects the intricate interplay of factors influencing the aging process of lithium-ion batteries.
+    </p>
+    
+    <p>
+        Reseach Questions:
+        <ol>
+            
+            <li>Is there a correlation between battery temperature and measured impedance?</li>
+            <li>What is the trend of capacity degradation for Battery #18 over repeated cycles?</li>
+            <li>What is the trend of capacity degradation for multiple Batteries from different experimental sets over repeated cycles?</li>
+            <li>Is there a consistent relationship between current and voltage during the charge cycle among multiple experiment sets</li>
+            <li>Is there a consistent relationship between Voltage capacity and battery impedance?</li>
+            <li>How does the discharge capacity measured at the charger vary during charge cycles for Battery #6?</li>
+            <li>What is the estimated electrolyte resistance for Battery #7 during impedance measurements?</li>
+            <li>How does battery impedance change over time during repeated cycles for Battery #5?</li>
+            <li>Can we predict remaining useful life (RUL) based on observed capacity fade?</li>
+            <li>How does ambient temperature vary during different operational profiles?</li>
+            <li>What is the typical charging profile for Battery #5 in terms of current and voltage?</li>
+            <li>How does the battery terminal voltage change during discharge cycles for Battery #7?</li>
+        </ol>
+    </p>
 
 </section>
 
