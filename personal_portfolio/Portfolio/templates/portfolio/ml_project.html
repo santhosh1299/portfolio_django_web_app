@@ -2,6 +2,27 @@
 
 {% block content %}
 {% load static %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const scrollableNavLinks = document.querySelectorAll('.scrollable-nav .side-heading');
+        
+        scrollableNavLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 70, // Adjust the offset as needed
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
 
 <style>
     body {
@@ -11,74 +32,116 @@
         overflow-x: hidden;
     }
 
-    nav {
-        position: fixed;
-        top: 50%;
-        right: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        z-index: 2;
-    
-   } 
+nav {
+    background-color: #343a40;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-    #side-heading {
+.navbar-brand {
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc00; /* Change to your desired hover color */
+}
+
+
+   .side-heading {
         color: #343a40;
         text-decoration: none;
         font-weight: normal;
-        padding: 15px;
+        padding: 13px;
         background-color: #f8f9fa;
-        border-radius: 15px;
+        border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-        
-}
-    
+    }
 
-    #side-heading:hover {
+    .side-heading:hover {
         background-color: #343a40;
         color: #fff;
-        transform: scale(1.05);
     }
 
-    #side-heading.active {
+    .side-heading.active {
         font-weight: bold;
+        color: #fff;
+        background-color: #555;
     }
 
-    section {
-        padding: 20px;
-        text-align: center;
-        margin: 20px;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding-top: 70px;
-    }
-
-    section h2 {
-        font-weight: bold;
-    }
-
-    .scrollable-nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 200px; /* Adjust the width of your sidebar */
-    height: 100vh; /* Set a fixed height for the navigation bar */
-    background-color: transparent; /* Make the background transparent */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 20px;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Adjust the shadow direction */
-    z-index: 2;
-    overflow-y: auto; /* Make the navigation bar vertically scrollable */
+   section {
+    padding: 30px;
+    text-align: left;
+    margin: 30px 0;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    position: relative; /* Add this line to make room for the fixed header */
+    top: 70px; /* Add this line to push the section down below the fixed header */
 }
 
+/* Updated Section Heading Styles */
+section h2 {
+    font-weight: bold;
+    color: #343a40;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Updated Section Paragraph Styles */
+section p {
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Updated Image Styles */
+section img {
+    max-width: 100%;
+    height: auto;
+    align-self: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+    .scrollable-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items:stretch;
+        padding-top: 60px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+        overflow-y: auto;
+    }
+article {
+        margin-left: 220px; 
+        width: calc(100% - 220px); 
+    }
+
 .scrollable-nav .side-heading {
-    color: #fff;
+    
     text-decoration: none;
     font-weight: normal;
-    padding: 15px;
+    padding: 13px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -95,29 +158,47 @@ h2.title {
         text-align: center; /* Center the text */
         margin-bottom: 20px; /* Add margin at the bottom for spacing */
     }
+/* Additional styles for the #sectionTitle */
+section#sectionTitle {
+    background-color: #343a40; /* Set the background color as needed */
+    padding: 30px; /* Adjust padding as needed */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    border: 2px solid #fff; /* Add a border with a white color */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+}
+
+/* Adjust the font size, weight, and color of the title within #sectionTitle */
+section#sectionTitle h2.title {
+    font-size: 2.5em; /* Adjust the font size as needed */
+    font-weight: bold; /* Adjust the font weight as needed */
+    color: #fff; /* Set the text color as needed */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Add margin at the bottom for spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow */
+}
 
 
 </style>
 
 <nav class="scrollable-nav">
     
-    <a id="side-heading" href="#section1">Introduction</a>
-    <a id="side-heading" href="#section2">Data Prep_EDA</a>
-    <a id="side-heading" href="#section3">Clustering</a>
-    <a id="side-heading" href="#section4">ARM</a>
-    <a id="side-heading" href="#section5">NaiveBayes</a>
-    <a id="side-heading" href="#section6">DecTrees</a>
-    <a id="side-heading" href="#section7">SVMs</a>
-    <a id="side-heading" href="#section8">Regression</a>
-    <a id="side-heading" href="#section9">NN</a>
-    <a id="side-heading" href="#section10">Conclusion</a>
+    <a class="side-heading" href="#section1">Introduction</a>
+    <a class="side-heading" href="#section2">Data Prep_EDA</a>
+    <a class="side-heading" href="#section3">Clustering</a>
+    <a class="side-heading" href="#section4">ARM</a>
+    <a class="side-heading" href="#section5">NaiveBayes</a>
+    <a class="side-heading" href="#section6">DecTrees</a>
+    <a class="side-heading" href="#section7">SVMs</a>
+    <a class="side-heading" href="#section8">Regression</a>
+    <a class="side-heading" href="#section9">NN</a>
+    <a class="side-heading" href="#section10">Conclusion</a>
 </nav>
-
+<article>
 <section  id="sectionTitle"  style=" padding-top: 70px;" >
-    <h2 class="title" ><strong>Lithium Ion Battery Discharge Capacity Prediction <br>And<br> Analysis of Charge Cycling</strong></h2>
+    <h2 class="title" >Lithium Ion Battery Discharge Capacity Prediction <br/>And<br/> Analysis of Charge Cycling</h2>
 </section>
 
-<section id="section1" ">
+<section id="section1" >
     <h2 class ="section-heading" >Introduction</h2>
     <p>
         "Lithium-ion battery maintenance is a crucial aspect that underscores the potential disastrous consequences and the heavy reliance of expensive systems on proper care. This holds particularly true for a myriad of applications, spanning from everyday devices like phones and laptops to essential components in vehicles and servers. The significance of maintaining lithium-ion batteries cannot be overstated, as these power sources are integral to the seamless operation of our technological landscape.
@@ -208,5 +289,5 @@ h2.title {
     <h2>Conclusion</h2>
     <p>This is the content of Section 4.</p>
 </section>
-
+</article>
 {% endblock %}
