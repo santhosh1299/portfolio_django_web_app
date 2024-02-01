@@ -19,7 +19,8 @@
         flex-direction: column;
         gap: 15px;
         z-index: 2;
-    }
+    
+   } 
 
     #side-heading {
         color: #343a40;
@@ -30,7 +31,9 @@
         border-radius: 15px;
         cursor: pointer;
         transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    }
+        
+}
+    
 
     #side-heading:hover {
         background-color: #343a40;
@@ -54,14 +57,53 @@
     section h2 {
         font-weight: bold;
     }
+
+    .scrollable-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px; /* Adjust the width of your sidebar */
+    height: 100vh; /* Set a fixed height for the navigation bar */
+    background-color: transparent; /* Make the background transparent */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Adjust the shadow direction */
+    z-index: 2;
+    overflow-y: auto; /* Make the navigation bar vertically scrollable */
+}
+
+.scrollable-nav .side-heading {
+    color: #fff;
+    text-decoration: none;
+    font-weight: normal;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.scrollable-nav .side-heading:hover {
+    background-color: #555;
+}
+
+
+
 </style>
 
-<nav>
+<nav class="scrollable-nav">
     
     <a id="side-heading" href="#section1">Introduction</a>
-    <a id="side-heading" href="#section2">Data Prep</a>
-    <a id="side-heading" href="#section3">Section 3</a>
-    <a id="side-heading" href="#section4">Section 4</a>
+    <a id="side-heading" href="#section2">Data Prep_EDA</a>
+    <a id="side-heading" href="#section3">Clustering</a>
+    <a id="side-heading" href="#section4">ARM</a>
+    <a id="side-heading" href="#section5">NaiveBayes</a>
+    <a id="side-heading" href="#section6">DecTrees</a>
+    <a id="side-heading" href="#section7">SVMs</a>
+    <a id="side-heading" href="#section8">Regression</a>
+    <a id="side-heading" href="#section9">NN</a>
+    <a id="side-heading" href="#section10">Conclusion</a>
 </nav>
 
 <section id="sectionTitle"  style=" padding-top: 70px;" >
@@ -76,7 +118,7 @@
 </section>
 
 <section id="section2" >
-    <h2>Data Prep</h2>
+    <h2>Data Prep_EDA</h2>
     <p>This is the content of Section 2.</p>
     {% for _ in "x"|ljust:100 %}<br>{% endfor %}
 
@@ -84,12 +126,42 @@
 
 
 <section id="section3">
-    <h2>Section 3</h2>
+    <h2>Clustering</h2>
     <p>This is the content of Section 3.</p>
 </section>
 
 <section id="section4">
-    <h2>Section 4</h2>
+    <h2>ARM</h2>
+    <p>This is the content of Section 4.</p>
+</section>
+
+<section id="section5">
+    <h2>NaiveBayes</h2>
+    <p>This is the content of Section 4.</p>
+</section>
+
+<section id="section6">
+    <h2>DecTrees</h2>
+    <p>This is the content of Section 4.</p>
+</section>
+
+<section id="section7">
+    <h2>SVMs</h2>
+    <p>This is the content of Section 4.</p>
+</section>
+
+<section id="section8">
+    <h2>Regression</h2>
+    <p>This is the content of Section 4.</p>
+</section>
+
+<section id="section9">
+    <h2>NN</h2>
+    <p>This is the content of Section 4.</p>
+</section>
+
+<section id="section10">
+    <h2>Conclusion</h2>
     <p>This is the content of Section 4.</p>
 </section>
 
