@@ -102,6 +102,10 @@ section h2 {
     font-size: 2em;
     margin-bottom: 20px;
 }
+section h2 {
+    font-size: 2.2em; /* Increase the font size for section headings */
+    margin-bottom: 15px; /* Add more spacing between headings and paragraphs */
+}
 
 /* Updated Section Paragraph Styles */
 section p {
@@ -181,7 +185,39 @@ p {
             font-size: 1.2em;
             line-height: 1.6em;
         }
-      
+        img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: auto; /* Add margin for better separation */
+}
+p a {
+    color: #555;
+    display: block;
+    text-align: center;
+    margin: auto;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+p a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+article p a {
+    color: #555;
+    display: block;
+    text-align: center;
+    margin: auto;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+article p a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+    
 </style>
 
 <nav class="scrollable-nav">
@@ -273,11 +309,11 @@ p {
         <br>
         <p>Raw Data</p>
         <br>
-        <img src={% static 'portfolio/data_clean/kaggle_before.png' %} alt="api-logo" width="250" height="465">
+        <img src={% static 'portfolio/data_clean/kaggle_before.png' %} alt="api-logo" width="750" height="465">
         <br>
         <p>After Clean</p>
         <br>
-        <img src={% static 'portfolio/data_clean/kaggle_after.png' %} alt="api-logo" width="250" height="465">
+        <img src={% static 'portfolio/data_clean/kaggle_after.png' %} alt="api-logo" width="750" height="465">
         <br>
         <p style="font-size: 0.9em; color: #888; margin-top: 5px; transition: color 0.3s ease, text-decoration 0.3s ease;"
    onmouseover="this.style.color='#555'; this.style.textDecoration='underline';"
@@ -359,7 +395,7 @@ p {
         <br>
         <h4>Checking missing values in merged data</h4>
         <br>
-        <img src={% static 'portfolio/data_clean/kaggle_merge_missing_value.png' %} alt="api-logo" width="941" height="263">
+        <img src={% static 'portfolio/data_clean/kaggle_merge_missing_value.png' %} alt="api-logo" width="941" height="260px">
         <br>
     <h3>Exploratory Data Analysis</h3>
     <ol style="font-size: 1.2em; line-height: 1.6em;">
