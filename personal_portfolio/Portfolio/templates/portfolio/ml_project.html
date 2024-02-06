@@ -251,8 +251,7 @@ h3 {
 <section id="section1" >
     <h2 class ="section-heading" >Introduction</h2>
     <p>
-        The Growing urgency of Climate change has led to electrification which has led to an increase in the usage of battery technologies, mainly Lithium-ion battery is predominantly used for many reasons. They possess high energy density which allows them to store more energy in relatively small sizes. Due to this property, it is widely used in portable electronic devices. Long-cycle capacity allows these types of batteries to provide electrical support for longer periods. Mainly, Lithium-ion batteries are environmentally friendly compared to other batteries where these batteries can be recycled using advanced recycling techniques, with a reduced environmental impact. These battery are virtually low in maintenance, making it suitable for many applications and user friendly. Their versatility in terms of designs make it possible to be used in small devices like calculators to battery powered electric cars, it is available in various designs and sizes including coin cells, pouch cells, and cylindrical cells. Nowadays smartphones requires more voltage and in comparison with other rechargeable batteries lithium ion provides high voltage per cell.  
-    </p>
+        The Growing urgency of Climate change has led to electrification which has led to an increase in the usage of battery technologies, mainly Lithium-ion battery is predominantly used for many reasons. They possess high energy density which allows them to store more energy in relatively small sizes. Due to this property, it is widely used in portable electronic devices. Long-cycle capacity allows these types of batteries to provide electrical support for longer periods. Mainly, Lithium-ion batteries are environmentally friendly compared to other batteries where these batteries can be recycled using advanced recycling techniques, with a reduced environmental impact. These batteries are virtually low in maintenance, making them suitable for many applications and user-friendly. Their versatility in terms of designs makes it possible to be used in small devices like calculators to battery-powered electric cars, it is available in various designs and sizes including coin cells, pouch cells, and cylindrical cells. Nowadays smartphones require more voltage and in comparison with other rechargeable batteries lithium-ion provides high voltage per cell.   </p>
     <img src={% static 'portfolio/battery-header.jpg' %} alt="Lithium Ion Battery- header" width="750" height="465">
     <p style="font-size: 0.9em; color: #888; margin-top: 5px; transition: color 0.3s ease, text-decoration 0.3s ease;"
    onmouseover="this.style.color='#555'; this.style.textDecoration='underline';"
@@ -279,9 +278,13 @@ h3 {
         According to Consumer Reports' 2023 Annual Auto Reliability Survey, electric vehicles have 79% reliability issues compared to gasoline cars. Battery-related issues are higher when we look into these issues in depth. Some issues like unexpected drops in driving range and reduced battery performance can be mitigated by predictive maintenance, which is the integration of Remaining Useful Life and discharge capacity prediction. It is very useful in guiding consumers to increase the lifespan and reliability of these batteries. Additionally, it can be integrated with dynamic charging algorithms to adapt charging patterns to ensure that minimizes degradation and maximizes the usable life.
     </p>
 
+    <br>
+    <p>
+        There was some research done on leveraging the Deep Learning Models for battery degradation prediction. This involves analyzing the battery's health and degradation patterns. This research was done purely on MATLAB and there were some limitations on the flexibility compared to other frameworks like TensorFlow or PyTorch. Additionally, MATLAB may not be scalable for large-scale deep-learning objects. Another research was done on the Remaining Useful Life Prediction using the Stacked Autoencoder (SAE) and Gaussian Mixture Regression. This approach led to the introduction of indirect health indicators from the Voltage, Current, and Temperature data to overcome the practical limitations.  </p>
+ 
     
     <p>
-        Reseach Questions:
+        Research Questions:
         <ol style="font-size: 1.2em; line-height: 1.6em;">
             
             <li>Is there a correlation between battery temperature and measured impedance?</li>
@@ -331,7 +334,7 @@ h3 {
         <br>
         <p>After Cleaning</p>
         <br>
-        <img src={% static 'portfolio/data_clean/kaggle_after.png' %} alt="api-logo" width="400" height="167">
+        <img src={% static 'portfolio/data_clean/kaggle_after.png' %} alt="api-logo" width="800" height="290">
         <br>
         <p style="font-size: 0.9em; color: #888; margin-top: 5px; transition: color 0.3s ease, text-decoration 0.3s ease;"
    onmouseover="this.style.color='#555'; this.style.textDecoration='underline';"
@@ -377,8 +380,10 @@ h3 {
         <h4>Checking for Unwanted Columns</h4>
         <p> The raw data has been processed into a data frame and it contains an unwanted redundant index column. As the first step of cleaning it has been removed.</p>
         <br>
+        <p>Before Cleaning</p>
         <img src={% static 'portfolio/data_clean/api_removingcols_before.png' %} alt="api-logo" width="450" height="188">
         <br>
+        <p>After Cleaning</p>
         <img src={% static 'portfolio/data_clean/api_removingcols_after.png' %} alt="api-logo" width="450" height="188">
         <br>
         <h4>Checking for Incorrect Data Types</h4>
@@ -412,8 +417,11 @@ h3 {
         <h4>Checking for Incorrect Data Types</h4>
         <br>
         <p>As the next step, the data is checked for data type. This dataset has 7 features, the Capacity feature as object type was converted to float and other features are in correct data type.</p>
+        <br>
+        <p>Before Cleaning</p>
         <img src={% static 'portfolio/data_clean/kaggle_check_datatypes_before.png' %} alt="api-logo" width="450" height="209">
         <br>
+        <p>After Cleaning</p>
         <img src={% static 'portfolio/data_clean/kaggle_check_datatypes_after.png' %} alt="api-logo" width="450" height="359">
         <br>
         <h4>Checking for Null Values</h4>
