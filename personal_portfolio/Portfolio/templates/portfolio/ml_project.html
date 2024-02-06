@@ -217,6 +217,16 @@ article p a:hover {
     color: #333;
     text-decoration: underline;
 }
+h4 {
+    font-size: 1.2em; /* You can adjust the value as needed */
+    font-weight: bold;
+}
+
+/* Increase h3 size and make it bolder */
+h3 {
+    font-size: 1.4em; /* You can adjust the value as needed */
+    font-weight: bold;
+}
     
 </style>
 
@@ -299,6 +309,8 @@ article p a:hover {
         <p style="font-size: 0.9em; color: #888; margin-top: 5px; transition: color 0.3s ease, text-decoration 0.3s ease;"
    onmouseover="this.style.color='#555'; this.style.textDecoration='underline';"
    onmouseout="this.style.color='#888'; this.style.textDecoration='none';">
+   <h3>1. Kaggle Data</h3>
+   <p>Data Link: </p>
    <a href="https://www.kaggle.com/datasets/patrickfleith/nasa-battery-dataset/data" target="_blank">
     https://Kaggle.com - https://www.kaggle.com/datasets/patrickfleith/nasa-battery-dataset/data
    </a>
@@ -308,34 +320,35 @@ article p a:hover {
         <p>This data set has been collected from a custom built battery prognostics testbed at the NASA Ames Prognostics Center of Excellence (PCoE). Li-ion batteries were run through 3 different operational profiles (charge, discharge and Electrochemical Impedance Spectroscopy) at different temperatures. Discharges were carried out at different current load levels until the battery voltage fell to preset voltage thresholds. Some of these thresholds were lower than that recommended by the OEM (2.7 V) in order to induce deep discharge aging effects. Repeated charge and discharge cycles result in accelerated aging of the batteries. The experiments were stopped when the batteries reached the end-of-life (EOL) criteria of 30% fade in rated capacity (from 2 Ah to 1.4 Ah).</p>
         <br>
         <p>Raw Data</p>
-        <br>
         <img src={% static 'portfolio/data_clean/kaggle_before.png' %} alt="api-logo" width="750" height="465">
         <br>
-        <p>After Clean</p>
+        <p>After Cleaning</p>
         <br>
         <img src={% static 'portfolio/data_clean/kaggle_after.png' %} alt="api-logo" width="750" height="465">
         <br>
         <p style="font-size: 0.9em; color: #888; margin-top: 5px; transition: color 0.3s ease, text-decoration 0.3s ease;"
    onmouseover="this.style.color='#555'; this.style.textDecoration='underline';"
    onmouseout="this.style.color='#888'; this.style.textDecoration='none';">
+
+   <h3>2. API Source : </h3>
    <a href="https://open-meteo.com/" target="_blank">
-    API Source https://open-meteo.com/
+    https://open-meteo.com/ - Historical Weather Data API
    </a>
 </p>
-        <br>
+        
         <p style="font-size: 0.9em; color: #888; margin-top: 5px; transition: color 0.3s ease, text-decoration 0.3s ease;"
    onmouseover="this.style.color='#555'; this.style.textDecoration='underline';"
    onmouseout="this.style.color='#888'; this.style.textDecoration='none';">
+   <p>Endpoint : </p>
    <a href="https://api.open-meteo.com/v1/forecast" target="_blank">
-    Endpoint - "https://api.open-meteo.com/v1/forecast"
+    "https://api.open-meteo.com/v1/forecast"
    </a>
 </p>
         <br>
         <p>Raw Data</p>
-        <br>
         <img src={% static 'portfolio/data_clean/api_before.png' %} alt="api-logo" width="941" height="263">
         <br>
-        <p>After Clean</p>
+        <p>After Cleaning</p>
         <br>
         <img src={% static 'portfolio/data_clean/api_after.png' %} alt="api-logo" width="250" height="465">
         <br>
@@ -351,25 +364,30 @@ article p a:hover {
         <li> <h4>API Data</h4> </li>
         <br>
         <h4>Checking for Unwanted Columns</h4>
+        <p> The raw data has been processed into a data frame and it contains an unwanted redundant index column. As the first step of cleaning it has been removed.</p>
         <br>
         <img src={% static 'portfolio/data_clean/api_removingcols_before.png' %} alt="api-logo" width="941" height="263">
         <br>
         <img src={% static 'portfolio/data_clean/api_removingcols_after.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Checking for Incorrect Data Types</h4>
+        <p>As the next step, the data is checked for data type. This dataset is in correct datatype, the Date feature as Datetime64 and temperature feature as Float</p>
         <br>
         <img src={% static 'portfolio/data_clean/api_check_datatype.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Checking for Null Values</h4>
         <br>
+        <p>The null values are checked for this dataset using isna() function and there were no null values in this dataset.</p>
         <img src={% static 'portfolio/data_clean/api_check_null.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Checking for Duplicated Rows</h4>
         <br>
+        <p>There were no duplicated rows in this dataset</p>
         <img src={% static 'portfolio/data_clean/api_duplicate.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Changing the month to match battery dataset</h4>
         <br>
+        <p>Due to data unavailability, in this API. The month values are changed from September to April and October to May has been modified to analyse the ambient weather and analyse the changes in other parameters.</p>
         <img src={% static 'portfolio/data_clean/api_manipulation.png' %} alt="api-logo" width="941" height="263">
         <br>
         <br>
@@ -377,24 +395,29 @@ article p a:hover {
         <br>
         <h4>Checking for Unwanted Columns</h4>
         <br>
+        <p>The raw data contains an unwanted columns. As the first step of cleaning it has been removed.</p>
         <img src={% static 'portfolio/data_clean/kaggle_removingcols.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Checking for Incorrect Data Types</h4>
         <br>
+        <p>As the next step, the data is checked for data type. This dataset has 7 features, the Capacity feature as object type was converted to float and other features are in correct data type.</p>
         <img src={% static 'portfolio/data_clean/kaggle_check_datatypes_before.png' %} alt="api-logo" width="941" height="263">
         <br>
         <img src={% static 'portfolio/data_clean/kaggle_check_datatypes_after.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Checking for Null Values</h4>
         <br>
+        <p>The null values are checked for this dataset using isna() function and there were no null values in this dataset.</p>
         <img src={% static 'portfolio/data_clean/kaggle_missing_value.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Merging Metadata with aggregated experiment data</h4>
         <br>
+        <p> The Experiment metadata table has been merged with the aggregated values from the experiment data. Mean, median and standard deviation of the Voltage measured, Current measured, Voltage load, Current Load and Time.</p>
         <img src={% static 'portfolio/data_clean/kaggle_discharge_merge_data.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Checking missing values in merged data</h4>
         <br>
+        <p>The merged data is checked for missing values and there were no missing values.</p>
         <img src={% static 'portfolio/data_clean/kaggle_merge_missing_value.png' %} alt="api-logo" width="941" height="260px">
         <br>
     <h3>Exploratory Data Analysis</h3>
@@ -403,42 +426,52 @@ article p a:hover {
 
         <h4>Remaining Useful Life(Minutes) of All Battery Groups</h4>
         <br>
+        <p>The median of RUL among all the different battery groups. The battery group 5 has the highest and battery group 3 has the lowest.</p>
         <img src={% static 'portfolio/eda/1.png' %} alt="api-logo" width="941" height="263">
          <br>
         <h4>Remaining Useful Life(Minutes) Distribution Analysis</h4>
         <br>
+        <p>The battery groups 5 and 6 have values from both extreme values. This indicates that there must be a gap during the experiment.</p>
         <img src={% static 'portfolio/eda/2.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Trend Analysis of Remaining Useful Life(Minutes) During The Experiment</h4>
         <br>
+        <p>Analysing the trend of the median Remaining Useful Life(Minutes), it is observed from the visualisation the group 5 and 6 have growing trend</p>
         <img src={% static 'portfolio/eda/3.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Indepth Analysis on Group 5 and 6</h4>
         <br>
+        <p>On indepth analysis of battery group 5 and 6 it is confirmed that there was a gap in both experiment groups which is the main reason for the increase in the median remaining useful life.</p>
         <img src={% static 'portfolio/eda/4.png' %} alt="api-logo" width="941" height="263">
         <br> 
         <h4>Clustering Battery Groups on Discharge Capacity and Remaining Useful Life(Minutes)</h4>
         <br>
+        <p>On clustering, it can be observed that the RUL and discharge capacity are correlated to eachother.</p>
         <img src={% static 'portfolio/eda/5.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Discharge Capacity Distribution Analysis</h4>
         <br>
+        <p>The battery groups 4 and 8 have values from both extreme values. This indicates that it needs an further analysis to find more about the discharge </p>
         <img src={% static 'portfolio/eda/6.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Comparison of Discharge Capacity with that of Remaining Useful Life (Minutes) of Battery #33</h4>
         <br>
+        <p>One interesting dip has been observed in the discharge capacity, it must be an outlier or some interesting pattern which needed to explored to find the reason about the dip.</p>
         <img src={% static 'portfolio/eda/7.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Histogram of temperature</h4>
         <br>
+        <p>This histogram indicates that some batteries have lower temperatures and some have higher temperatures. </p>
         <img src={% static 'portfolio/eda/8.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Comparison of Temperature with Current Load and Voltage Load </h4>
         <br>
+        <p>It can be observed the correlation between the current load and the temperature</p>
         <img src={% static 'portfolio/eda/9.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Temperature vs Remaining Useful Life(Minutes)</h4>
         <br>
+        <p>Another interesting observation about the battery group 7 which has higher median RUL within 10deg celsius</p>
         <img src={% static 'portfolio/eda/10.png' %} alt="api-logo" width="941" height="263">
         <br>
         
