@@ -503,7 +503,133 @@ h3 {
 
 <section id="section3">
     <h2>Clustering</h2>
-    <p>This is the content of Section 3.</p>
+
+    <h3>Overview</h3>
+    <p>Clustering is like the pivotal element of unsupervised learning, it helps in bringing together data points based on their natural similarities, in multiple dimensions. It does not need labelled data as required by the supervised learning. Instead, it dives into the data, searching for hidden structures without any guidance or context of the data. As it sifts through the dataset, clusters start to form, like groups of data points, each sharing common patterns or behaviors. 
+        These clusters shed light on the different personalities within the data, revealing patterns and connections we might not have noticed before. It is usually used in research where the labels are created by clustering and it helps in providing more context abt the data from the inner lying patterns
+        </p>
+
+       
+
+    
+    <h4>Types</h4>
+
+    <h4>Partitional Clustering</h4>
+    <ul>
+        <li>
+          It divides the dataset into non-overlapping groups based on their distance from one another. It is suitable for large datasets as it is scalable and efficient.
+        </li>
+        <li>
+          The cluster numbers are specified by the analyst, and there are ways to find an optimal number of clusters best for the data when there is no idea about the actual context of the data.
+        </li>
+        <li>
+          It includes methods like K-means and K-modes.
+        </li>
+      </ul>
+    <h4>KMeans</h4>
+    <p>In K-means clustering, the algorithm partitions the data into K clusters by iteratively assigning each data point to the nearest cluster centroid and updating the centroids based on the mean of the points in each cluster. K-means is widely used due to its simplicity and efficiency, but it requires specifying the number of clusters beforehand.</p>
+
+   
+
+    <h4>Hierachical Clustering</h4>
+    <p>Hierarchical clustering is a technique that creates a hierarchical tree-like structure of clusters, where each node represents a cluster. This method does not require the analyst to specify the number of clusters beforehand and is particularly useful when the dataset's structure is not well understood.
+    </p>
+    <h4>Agglomerative  Clustering</h4>
+    <ul>
+        <li>
+          Agglomerative clustering, also known as bottom-up clustering, starts with each data point as a separate cluster. It iteratively merges the closest clusters until a single cluster containing all data points is formed.
+        </li>
+        <li>
+          It considers each cluster as a single cluster and merges two clusters as one until there is only one cluster remaining.
+        </li>
+      </ul>
+
+    <h4>Linking methods</h4>
+    <ul>
+        <li>
+          Single Linkage: Merge the clusters based on the smallest distance between any points in the two clusters.
+        </li>
+        <li>
+          Complete Linkage: Merge the clusters based on the maximum distance between any points in the two clusters.
+        </li>
+        <li>
+          Average Linkage: Merge the clusters based on the average distance between any points in the two clusters.
+        </li>
+      </ul>
+      
+
+    <h4>Divisive  Clustering</h4>
+    <ul>
+        <li>
+          Divisive clustering, also known as top-down clustering, starts with all data points in a single cluster and recursively splits clusters into smaller clusters until each cluster contains only one data point.
+        </li>
+        <li>
+          It is the opposite of Agglomerative clustering. It clusters the data by considering all data points as one and splits them until each data point becomes a cluster. The splitting on each iteration is based on two criteria: intercluster dissimilarity and intercluster similarity.
+        </li>
+      </ul>
+      
+     <h4>Commonly Used Distance Metrics</h4>
+     <h3>Euclidean Distance</h3>
+<p>
+  Perhaps the most widely used distance metric, Euclidean distance measures the straight-line distance between two data points in Euclidean space. It is calculated as the square root of the sum of squared differences between corresponding coordinates of two points. Euclidean distance is suitable for continuous numeric data and assumes that the data points are distributed in a continuous space.
+</p>
+
+<h3>Manhattan Distance</h3>
+<p>
+  Also known as city block distance or taxicab distance, Manhattan distance measures the sum of the absolute differences between corresponding coordinates of two points. It represents the distance traveled along axes at right angles. Manhattan distance is suitable for data with attributes measured on different scales or for which the concept of straight-line distance may not be meaningful.
+</p>
+
+<h3>Cosine Similarity</h3>
+<p>
+  Unlike Euclidean and Manhattan distances, cosine similarity measures the cosine of the angle between two vectors, representing the similarity in direction rather than magnitude. It is commonly used for text data, where documents are represented as vectors of word frequencies or TF-IDF scores. Cosine similarity is robust to differences in vector magnitudes and is effective for measuring similarity between sparse vectors.
+</p>
+
+
+    <h4>Density-based Clustering</h4>
+    <ul>
+        <li>
+          Density-based clustering is a type of clustering algorithm that identifies clusters based on the density of data points in the feature space.
+        </li>
+        <li>
+          Unlike partitioning or hierarchical clustering, which assume that clusters have well-defined boundaries, density-based clustering methods can discover clusters of arbitrary shapes and sizes.
+        </li>
+        <li>
+          One popular density-based clustering algorithm is DBSCAN (Density-Based Spatial Clustering of Applications with Noise).
+        </li>
+        <li>
+          The main advantages of density-based clustering are its ability to handle clusters of arbitrary shapes and sizes and its robustness to noise and outliers.
+        </li>
+      </ul>
+      
+      <h3>Data Prep</h3>
+      <p>Clustering algorithms involve mathematical operations such as calculating centroids, updating cluster assignments, or determining cluster distances. These operations are more straightforward to perform on numeric data, as mathematical operations are well-defined for numerical values. Handling categorical or text data requires additional preprocessing steps, such as one-hot encoding or feature scaling, to convert them into numeric format.
+      </p>
+      <h4>Before</h4>
+      <br>
+      <p>There are both qualitative and quantitative data types are present in the data</p>
+      <img src={% static 'portfolio/clustering/data_prep_before.png' %} alt="api-logo" width="941" height="263">
+      <br>
+      <h4>After</h4>
+      <br>
+      <p>It only contains quantitative data and it is ready for clustering</p>
+      <img src={% static 'portfolio/clustering/data_prep_after.png' %} alt="api-logo" width="941" height="263">
+      <br>
+    
+      <h4>Kmeans</h4>
+      <h4>Finding the optimal K value for Kmeans using Silhoutte Method</h4>
+      <br>
+      <p>The highest silhoutte score was given for K value 11. So it is the optimal value suggested by this method.</p>
+      <img src={% static 'portfolio/clustering/silhoutte.png' %} alt="api-logo" width="941" height="263">
+      <br>
+  
+      <h4>Output</h4>
+      <br>
+      <p>11 clusters are formed for this data by Kmeans model</p>
+      <img src={% static 'portfolio/clustering/Clustering output.png' %} alt="api-logo" width="941" height="263">
+      <br>
+
+      <h4>Hierachical Clustering</h4>
+      
 </section>
 
 <section id="section4">
