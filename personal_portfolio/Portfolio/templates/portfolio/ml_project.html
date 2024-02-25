@@ -602,6 +602,7 @@ h3 {
       </ul>
       
       <h3>Data Prep</h3>
+      <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/API_news.ipynb">News data collection from API</a></h4>
       <p>Clustering algorithms involve mathematical operations such as calculating centroids, updating cluster assignments, or determining cluster distances. These operations are more straightforward to perform on numeric data, as mathematical operations are well-defined for numerical values. Handling categorical or text data requires additional preprocessing steps, such as one-hot encoding or feature scaling, to convert them into numeric format.
       </p>
       <h4>Before</h4>
@@ -615,26 +616,173 @@ h3 {
       <img src={% static 'portfolio/clustering/data_prep_after.png' %} alt="api-logo" width="941" height="263">
       <br>
     
+      <h3>Code </h3>
       <h4>Kmeans</h4>
+      
+      <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/Clustering-kmeans.ipynb">Kmeans in Python</a></h4>
+     
+   
+
+      <h4>Hierachical Clustering</h4>
+     
+      <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/Clustering-hclust.ipynb">Hclust in R</a></h4>
+
+     
+
+      <h3>Results</h3>
+<p>In the course of our analysis, particular emphasis was placed on the pivotal role of voltage and battery attributes. To illuminate our findings, we employed K-means clustering to discern distinct patterns within our dataset. Leveraging the resulting clusters, we embarked on a process of discretizing our output variables, notably the Remaining Useful Life (RUL) and discharge capacity. With a silhouette score of 11 indicating well-defined clusters, we juxtaposed the clustering outcomes alongside the RUL and discharge capacity values in a scatter plot. This strategic visualization allowed for a comprehensive examination of how these values are clustered and their interrelation within the broader dataset. By integrating clustering results with output variable discretization, we have gained valuable insights into the intricate relationships between input and output variables. This approach not only facilitates the identification of underlying patterns but also enhances our understanding of how these variables contribute to the overall clustering structure, thereby enriching the depth of our analysis and guiding informed decision-making processes.</p>
+
+
       <h4>Finding the optimal K value for Kmeans using Silhoutte Method</h4>
       <br>
       <p>The highest silhoutte score was given for K value 11. So it is the optimal value suggested by this method.</p>
       <img src={% static 'portfolio/clustering/silhoutte.png' %} alt="api-logo" width="941" height="263">
       <br>
   
+
+      <h4>Kmeans</h4>
+
+
       <h4>Output</h4>
       <br>
       <p>11 clusters are formed for this data by Kmeans model</p>
       <img src={% static 'portfolio/clustering/Clustering output.png' %} alt="api-logo" width="941" height="263">
       <br>
-
       <h4>Hierachical Clustering</h4>
+
+      <h4>Dendogram using Complete Linkage</h4>
+      <br>
       
+      <img src={% static 'portfolio/clustering/hclust.png' %} alt="api-logo" width="941" height="263">
+      <br>
+
+      <h4>Dendogram using Average Linkage</h4>
+      <br>
+    
+      <img src={% static 'portfolio/clustering/hclust_average.png' %} alt="api-logo" width="941" height="263">
+      <br>
+
+      <h4>Dendogram using Single Linkage</h4>
+      <br>
+
+      <img src={% static 'portfolio/clustering/hclust_single.png' %} alt="api-logo" width="941" height="263">
+      <br>
+      
+      <h4>Output</h4>
+      <br>
+      <p>11 clusters are formed for this data by Hclust model</p>
+      <img src={% static 'portfolio/clustering/hclust_single.png' %} alt="api-logo" width="941" height="263">
+      <br>
+
+     
+      <h3>Conclusion</h3>
+      <p>Integrating clustering analysis into our modeling framework not only provided valuable insights into battery performance but also significantly enriched our predictive capabilities for both Remaining Useful Life (RUL) and discharge capacity. By stratifying the data into distinct clusters based on similarities in key features, we were able to develop cluster-specific predictive models tailored to the unique degradation patterns observed within each cluster. This approach not only enhanced the accuracy of our RUL predictions but also enabled more precise estimates of discharge capacity over time. For instance, clusters exhibiting accelerated degradation rates were characterized by distinct sets of predictive variables, allowing us to identify early warning signs of capacity loss and predict RUL more accurately than traditional methods.</p>
+      <p>Furthermore, the clustering analysis facilitated the identification of critical features driving variations in both RUL and discharge capacity across different battery states. By isolating the most influential variables within each cluster, we were able to refine our predictive models and capture subtle nuances in battery degradation dynamics more effectively. This comprehensive understanding of the underlying factors influencing RUL and discharge capacity enabled us to develop predictive models that are not only more accurate but also more robust to real-world variability. As a result, our approach holds immense promise for optimizing battery management strategies and prolonging the operational lifespan of battery systems in diverse applications, ranging from electric vehicles to renewable energy storage.</p>
+
+
+
+
+
 </section>
 
-<section id="section4">
+<section id="section4"> 
     <h2>ARM</h2>
-    <p>This is the content of Section 4.</p>
+
+    <h4>Overview</h4>
+   <p>Association Rule Mining (ARM) is a data mining technique used to discover relationships or associations between items or variables in a dataset. It is commonly applied to transactional data, where each transaction consists of a set of items purchased together. ARM aims to uncover patterns in these transactions that can provide valuable insights for various applications, such as market basket analysis and recommendation systems.
+
+    For example, consider a retail store that records transactions from its customers. Each transaction contains a list of items purchased by a customer during a single visit to the store. By applying ARM to this transactional data, the store can discover associations between different items frequently purchased together. These associations can be represented as rules of the form "If {A} then {B}", indicating that customers who buy item A are likely to buy item B as well.</p> 
+    <h4>Describe ARM</h4>
+    <p>ARM involves analyzing transactional data to find relationships or associations between items or variables in the data. It helps in various areas such as market basket analysis and recommendation systems.</p>
+    
+    <h4>Support</h4>
+    <p>Support is a measure used in ARM to indicate the frequency of occurrence of a particular itemset in the dataset. It helps identify the most frequent itemsets or combinations of items.</p>
+    
+    <h4>Confidence</h4>
+    <p>Confidence is a measure used in ARM to indicate the reliability of a rule. It measures the likelihood that an item B is purchased given that item A is purchased.</p>
+    
+    <h4>Lift</h4>
+    <p>Lift is a measure used to evaluate the strength of association between two items. It compares the likelihood of two items occurring together to the likelihood of their occurrence being independent of each other.</p>
+    
+    <h4>What are rules?</h4>
+    <p>Association rules are statements that describe the relationships between items in a dataset. They are typically in the form of "If {A} then {B}", where A and B are itemsets.</p>
+    
+    <h4>What is Apriori?</h4>
+    <p>The Apriori algorithm is a popular algorithm used for mining association rules. It works by iteratively generating candidate itemsets and pruning those that do not meet the minimum support threshold.</p>
+    
+    <h4>Its Working</h4>
+    <p>The Apriori algorithm starts by identifying frequent itemsets through iterative candidate generation and pruning. It then generates association rules based on these frequent itemsets, providing valuable insights into the data.</p>
+
+    <h3>Data Prep </h3>
+    <h4>Conversion of Data into Transaction Data</h4>
+    <p>Transaction data is typically represented as a dataset where each row corresponds to a transaction, and the items purchased in that transaction are listed. To convert raw data into transaction data suitable for Association Rule Mining (ARM), you need to aggregate the data into transactional format. This is commonly done by identifying unique transactions and listing the items associated with each transaction.</p>
+    <p>For example, consider a dataset containing sales data for a retail store. Each row in the dataset represents a sale, with columns indicating the transaction ID and the items purchased. To convert this data into transaction format, you would aggregate the items purchased in each transaction and create a list of items associated with each unique transaction ID.</p>
+    
+    <h4>Why Unnlabelled Transaction Data is used?</h4>
+    <p>Unlabeled transaction data is preferred in Association Rule Mining (ARM) due to its flexibility and ability to uncover hidden patterns without predefined labels or categories. With unlabeled data, there's no need to specify predefined categories for items, allowing for the discovery of associations between any items present in the dataset. This approach enables the extraction of insights from raw transactional data, particularly in real-world scenarios where items may not come with predefined labels. Analyzing unlabeled transaction data simplifies the analysis process and facilitates the discovery of generalizable patterns that hold across different contexts. By focusing on the co-occurrence of items in transactions, ARM algorithms can identify common purchasing behaviors and item relationships, providing valuable insights for various industries and domains.</p>
+   
+    <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/API_news.ipynb">News data collection from API</a></h4>
+    
+    <h4>Before</h4>
+    <br>
+    <p>Json Response of the news data using API</p>
+    <img src={% static 'portfolio/clustering/arm_before.png' %} alt="api-logo" width="941" height="263">
+    <br>
+    <h4>After</h4>
+    <br>
+    <p>It contains the itemsets and the transaction ID for each transaction</p>
+    <img src={% static 'portfolio/clustering/arm_after.png' %} alt="api-logo" width="941" height="263">
+    <br>
+  
+    <h3>Code </h3>
+    
+    <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/Clustering-kmeans.ipynb">Association Rule Mining in R</a></h4>
+   
+   <h3>Results</h3>
+
+   <br>
+   <p>Association Network visualisation</p>
+   <img src={% static 'portfolio/clustering/network.png' %} alt="api-logo" width="941" height="263">
+   <br>
+   <h4>Top 10 by Support</h4>
+   <br>
+   <p>The top 10 rules by support</p>
+   <img src={% static 'portfolio/clustering/arm_support.png' %} alt="api-logo" width="941" height="263">
+   <br>
+   <h4>Top 10 by Confidence</h4>
+   <br>
+   <p>The top 10 rules based on confidence</p>
+   <img src={% static 'portfolio/clustering/arm_confidence.png' %} alt="api-logo" width="941" height="263">
+   <br>
+   <h4>Top 10 by Lift</h4>
+   <br>
+   <p>The top 10 rules based on lift</p>
+   <img src={% static 'portfolio/clustering/arm_lift.png' %} alt="api-logo" width="941" height="263">
+   <br>
+    <br>
+   <p>The association based on "IPhone" keyword on the LHS</p>
+   <img src={% static 'portfolio/clustering/iphone_network.png' %} alt="api-logo" width="941" height="263">
+   <br>
+
+   <br>
+   <p>The association based on "Galaxy" keyword on the LHS</p>
+   <img src={% static 'portfolio/clustering/iphone_network.png' %} alt="api-logo" width="941" height="263">
+   <br>
+
+   <br>
+   <p>The association based on "EV" keyword on the LHS</p>
+   <img src={% static 'portfolio/clustering/ev_network.png' %} alt="api-logo" width="941" height="263">
+   <br>
+
+
+<p>One particularly interesting association rule within the dataset is {iphone} => {battery}. With a relatively high support of 1.85%, this rule indicates that the purchase or discussion of iPhones often coincides with mentions of batteries. The confidence value of 61.54% suggests a strong predictive power, implying that when iPhones are present, there's a notable likelihood (approximately 61.54%) that batteries are also mentioned. Additionally, the lift value of 2.21 indicates a positive correlation between iPhones and batteries, meaning that the presence of iPhones tends to increase the likelihood of batteries being mentioned beyond what would be expected by chance alone. This association may reflect the importance of battery life in mobile devices like iPhones, influencing consumer discussions and purchases. Overall, this rule highlights a significant and meaningful association between iPhones and batteries, offering insights into current news related to batteries.</p>
+<p>Among the association rules sorted by support, lift, and confidence, a notable pattern emerges regarding the relationship between {iphone} and {battery}. With a high support of 1.85%, the association rule {iphone} => {battery} ranks first, suggesting a prevalent occurrence of discussions or activities related to iPhones alongside mentions of batteries. The high lift value of 8.5756824 further emphasizes a strong positive correlation between iPhones and batteries, indicating that the likelihood of mentioning batteries significantly increases when iPhones are involved compared to their occurrence independently. Additionally, the confidence value of 61.54% underscores the rule's predictive power, indicating that there is a substantial likelihood that batteries will be mentioned when iPhones are present. This association may reflect the importance of battery life in mobile devices like iPhones, influencing consumer discussions and purchase decisions. Overall, these rules provide valuable insights into the interconnectedness of topics within the dataset, highlighting prevalent trends and interests surrounding iPhones and batteries.</p>
+
+<h3>Conclusion</h3>
+<p>After delving into our association rules, it's clear as day that certain items love to hang out together in our dataset. Take the iPhone and battery duo, for instance – they're practically joined at the hip! With a whopping support of 1.85%, it's evident that whenever iPhones are on the agenda, batteries are quick to follow suit. And with a confidence rating of 61.54%, it's almost a given that battery chatter will accompany any discussion about iPhones. Not to mention, that lift value of 2.21 tells us this relationship is more than just happenstance – iPhones and batteries really do have a special bond.</p>
+<p>But it's not just iPhones and batteries – our association rules reveal a whole web of interconnected items, offering a fascinating glimpse into the trends and interests lurking within our dataset. From smartphones to portable power and market trends, it's like our data has its own secret language, and association rules are the key to unlocking its mysteries.
+   <p>Moreover, analyzing news data provides additional insights into the factors that often appear together in headlines. This integration of news data further enriches our understanding of the relationships between different topics and highlights the interconnected nature of current events and consumer interests. By leveraging these insights, businesses can tailor their strategies to align with emerging trends and capitalize on the dynamics driving public discourse. In essence, association rule mining not only reveals hidden patterns within our dataset but also offers a window into the broader landscape of societal trends and preferences.</p> 
+</p>
 </section>
 
 <section id="section5">
