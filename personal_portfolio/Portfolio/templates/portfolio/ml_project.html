@@ -722,12 +722,20 @@ h3 {
 
 <section id="section4"> 
     <h2>ARM</h2>
-
+    <img src={% static 'portfolio/clustering/arm_main.png' %} alt="api-logo" width="941" height="263">
+    <a href="https://www.analytixlabs.co.in/blog/apriori-algorithm-in-data-mining/" target="_blank">
+        Source:https://www.analytixlabs.co.in/blog/apriori-algorithm-in-data-mining/
+    </a>
     <h4>Overview</h4>
    <p>Association Rule Mining (ARM) is a data mining technique used to discover relationships or associations between items or variables in a dataset. It is commonly applied to transactional data, where each transaction consists of a set of items purchased together. ARM aims to uncover patterns in these transactions that can provide valuable insights for various applications, such as market basket analysis and recommendation systems.
 
     For example, consider a retail store that records transactions from its customers. Each transaction contains a list of items purchased by a customer during a single visit to the store. By applying ARM to this transactional data, the store can discover associations between different items frequently purchased together. These associations can be represented as rules of the form "If {A} then {B}", indicating that customers who buy item A are likely to buy item B as well.</p> 
     <h4>Describe ARM</h4>
+
+    <img src={% static 'portfolio/clustering/arm_formula.png' %} alt="api-logo" width="941" height="263">
+    <a href="https://bicorner.com/2015/07/22/what-the-heck-are-association-rules-in-analytics/" target="_blank">
+        Source:https://bicorner.com/2015/07/22/what-the-heck-are-association-rules-in-analytics/
+    </a>
     <p>ARM involves analyzing transactional data to find relationships or associations between items or variables in the data. It helps in various areas such as market basket analysis and recommendation systems.</p>
     
     <h4>Support</h4>
@@ -784,16 +792,20 @@ h3 {
    <p>The top 10 rules by support</p>
    <img src={% static 'portfolio/clustering/arm_support.png' %} alt="api-logo" width="941" height="263">
    <br>
+   <p>An intriguing observation from these association rules is the strong presence of specific electronic devices like "iphone" and "galaxy" in conjunction with mentions of "battery". The rule ({iphone} => {battery}) stands out with a relatively high confidence of 61.54% and a lift value of 8.58, indicating a significant association between discussions related to iPhones and the presence of battery-related topics. This suggests that battery performance is a crucial consideration in conversations or activities involving iPhones, possibly reflecting the importance of battery life in mobile devices. Similarly, the association between "galaxy" and "battery" is notable, although with a lower confidence and lift value compared to iPhones. Nonetheless, this association implies a correlation between discussions surrounding Galaxy devices and battery-related concerns, highlighting the significance of battery performance across different smartphone brands. Additionally, the presence of terms like "power" and "portable" further emphasizes the relevance of battery-related discussions in various contexts, from portable electronics to electric vehicles. Overall, these association rules shed light on the interconnectedness between electronic devices and battery-related topics, offering valuable insights into consumer preferences and technological considerations.</p>
+   <br>
    <h4>Top 10 by Confidence</h4>
    <br>
    <p>The top 10 rules based on confidence</p>
    <img src={% static 'portfolio/clustering/arm_confidence.png' %} alt="api-logo" width="941" height="263">
    <br>
+   <p>One interesting aspect revealed by these association rules is the strong correlation between certain items or features and the presence of "battery" in the dataset. For instance, the rule ({iphone, new} => {battery}) stands out with a perfect confidence score, suggesting that whenever discussions or activities involving both "iphone" and "new" arise, the mention of "battery" is almost guaranteed. This association highlights a potential trend where the introduction of new iPhone models coincides with discussions about battery-related topics, indicating a significant focus on battery performance and technology advancements within the smartphone industry. Additionally, the association between "speed" and "battery" ({speed} => {battery}) showcases an interesting relationship, with a relatively high confidence score indicating a strong likelihood of battery mentions in contexts related to speed. This could hint at discussions surrounding the battery performance of high-speed electronic devices or electric vehicles, where power demands are often paramount. Overall, these association rules offer valuable insights into the interconnectedness of different features within the dataset, shedding light on underlying patterns and potential relationships that merit further exploration and analysis.</p>
    <h4>Top 10 by Lift</h4>
    <br>
    <p>The top 10 rules based on lift</p>
    <img src={% static 'portfolio/clustering/arm_lift.png' %} alt="api-logo" width="941" height="263">
    <br>
+  <p>The notable correlation between specific items or features and the mention of "battery" within the dataset. For instance, the rule ({iphone, new} => {battery}) stands out with a remarkably high lift value of 13.94, indicating a significant association between discussions or activities involving both "iphone" and "new" and the presence of "battery" in the same context. This suggests a compelling trend where the introduction of new iPhone models coincides with discussions about battery-related topics, underscoring the importance of battery performance in the realm of smartphone technology. Additionally, the rule ({speed} => {battery}) is particularly interesting due to its high lift value of 9.29, suggesting a strong correlation between discussions related to "speed" and mentions of "battery". This could imply a focus on battery performance in high-speed electronic devices or electric vehicles, where power demands are crucial. Overall, these association rules provide valuable insights into the interconnectedness of different features within the dataset, offering intriguing patterns and relationships that warrant further exploration and analysis.</p>
     <br>
    <p>The association based on "IPhone" keyword on the LHS</p>
    <img src={% static 'portfolio/clustering/iphone_network.png' %} alt="api-logo" width="941" height="263">
@@ -811,7 +823,6 @@ h3 {
 
 
 <p>One particularly interesting association rule within the dataset is {iphone} => {battery}. With a relatively high support of 1.85%, this rule indicates that the purchase or discussion of iPhones often coincides with mentions of batteries. The confidence value of 61.54% suggests a strong predictive power, implying that when iPhones are present, there's a notable likelihood (approximately 61.54%) that batteries are also mentioned. Additionally, the lift value of 2.21 indicates a positive correlation between iPhones and batteries, meaning that the presence of iPhones tends to increase the likelihood of batteries being mentioned beyond what would be expected by chance alone. This association may reflect the importance of battery life in mobile devices like iPhones, influencing consumer discussions and purchases. Overall, this rule highlights a significant and meaningful association between iPhones and batteries, offering insights into current news related to batteries.</p>
-<p>Among the association rules sorted by support, lift, and confidence, a notable pattern emerges regarding the relationship between {iphone} and {battery}. With a high support of 1.85%, the association rule {iphone} => {battery} ranks first, suggesting a prevalent occurrence of discussions or activities related to iPhones alongside mentions of batteries. The high lift value of 8.5756824 further emphasizes a strong positive correlation between iPhones and batteries, indicating that the likelihood of mentioning batteries significantly increases when iPhones are involved compared to their occurrence independently. Additionally, the confidence value of 61.54% underscores the rule's predictive power, indicating that there is a substantial likelihood that batteries will be mentioned when iPhones are present. This association may reflect the importance of battery life in mobile devices like iPhones, influencing consumer discussions and purchase decisions. Overall, these rules provide valuable insights into the interconnectedness of topics within the dataset, highlighting prevalent trends and interests surrounding iPhones and batteries.</p>
 
 <h3>Conclusion</h3>
 <p>After delving into our association rules, it's clear as day that certain items love to hang out together in our dataset. Take the iPhone and battery duo, for instance – they're practically joined at the hip! With a whopping support of 1.85%, it's evident that whenever iPhones are on the agenda, batteries are quick to follow suit. And with a confidence rating of 61.54%, it's almost a given that battery chatter will accompany any discussion about iPhones. Not to mention, that lift value of 2.21 tells us this relationship is more than just happenstance – iPhones and batteries really do have a special bond.</p>
