@@ -280,10 +280,12 @@ h3 {
 
     <br>
     <p>
-        There was some research done on leveraging the Deep Learning Models for battery degradation prediction. This involves analyzing the battery's health and degradation patterns. This research was done purely on MATLAB and there were some limitations on the flexibility compared to other frameworks like TensorFlow or PyTorch. Additionally, MATLAB may not be scalable for large-scale deep-learning objects. Another research was done on the Remaining Useful Life Prediction using the Stacked Autoencoder (SAE) and Gaussian Mixture Regression. This approach led to the introduction of indirect health indicators from the Voltage, Current, and Temperature data to overcome the practical limitations.  </p>
- 
-    
+        There was some research done on leveraging the Deep Learning Models for battery degradation prediction. This involves analyzing the battery's health and degradation patterns. This research was done purely on MATLAB and there were some limitations on the flexibility compared to other frameworks like TensorFlow or PyTorch. Additionally, MATLAB may not be scalable for large-scale deep-learning objects. Another research was done on the Remaining Useful Life Prediction using the Stacked Autoencoder (SAE) and Gaussian Mixture Regression. This approach led to the introduction of indirect health indicators from the Voltage, Current, and Temperature data to overcome the practical limitations.  </p>   
     <p>
+    <p>The intricate interplay between voltage and temperature within these batteries holds crucial implications for their overall performance and longevity. Throughout the charging and discharging cycles, voltage fluctuations serve as indicators of internal resistance changes and electrolyte behavior, offering invaluable insights into the battery's state of health. Analyzing voltage profiles across diverse charging conditions enables predictive models to accurately estimate the remaining capacity of the battery, facilitating proactive maintenance strategies to optimize its lifespan.Simultaneously, elevated temperatures present a formidable challenge, as they expedite degradation mechanisms within lithium-ion batteries, leading to capacity fade and compromised performance. By monitoring temperature variations during charging cycles, predictive maintenance strategies can effectively mitigate thermal stress and extend the battery's useful life. Moreover, the integration of voltage and temperature data from an array of charging profiles serves as the bedrock for the development of robust predictive maintenance techniques. Leveraging advanced analytics and machine learning algorithms, stakeholders can assess the profound impact of operational conditions on battery health with unprecedented accuracy.</p>
+
+    <p>This proactive approach empowers stakeholders to implement timely interventions, such as adjusting charging protocols or deploying sophisticated thermal management strategies, to optimize battery performance and reliability. By making informed decisions grounded in comprehensive data analysis, stakeholders ensure the efficient and sustainable operation of lithium-ion battery systems across diverse applications. In essence, the seamless integration of voltage and temperature data not only enhances predictive maintenance capabilities but also lays the foundation for the continued advancement of energy storage technologies, driving innovation and sustainability in the modern era.</p>
+
         Research Questions:
         <ol style="font-size: 1.2em; line-height: 1.6em;">
             
@@ -509,12 +511,18 @@ h3 {
         These clusters shed light on the different personalities within the data, revealing patterns and connections we might not have noticed before. It is usually used in research where the labels are created by clustering and it helps in providing more context abt the data from the inner lying patterns
         </p>
 
-       
+        <p>In the context of predicting discharge capacity in lithium-ion batteries, clustering techniques can be leveraged to identify thresholds for data discretization. By analyzing features related to battery performance, such as voltage, temperature, and charging profiles, clustering algorithms can effectively group similar data points together based on their intrinsic characteristics. This clustering information provides a nuanced understanding of the dataset's structure, highlighting distinct clusters that exhibit varying levels of correlation with discharge capacity.</p>
+        <p>Moreover, by excluding the discharge capacity feature from the clustering process, we can focus solely on identifying patterns in other relevant features that may indirectly influence discharge capacity. Through this approach, clusters with similar characteristics to discharge capacity can be identified, providing valuable insights into the factors that contribute to battery performance. Subsequently, these clustering results can inform the data discretization process, guiding the selection of appropriate thresholds for binning continuous variables into discrete categories.</p>
+        <p>By incorporating clustering information into the data discretization process, we can ensure that the resulting discretized features capture meaningful variations in battery performance while minimizing information loss. This iterative approach enhances the interpretability and predictive power of subsequent models built upon the discretized data. Ultimately, leveraging clustering algorithms in this manner enables us to extract actionable insights from the dataset and optimize the predictive accuracy of discharge capacity models in lithium-ion battery systems.</p>
 
     
     <h4>Types</h4>
 
     <h4>Partitional Clustering</h4>
+    <br>
+     
+      <img src={% static 'portfolio/clustering/partitional_clust.png' %} alt="api-logo" width="941" height="263">
+      <br>
     <ul>
         <li>
           It divides the dataset into non-overlapping groups based on their distance from one another. It is suitable for large datasets as it is scalable and efficient.
@@ -532,6 +540,11 @@ h3 {
    
 
     <h4>Hierachical Clustering</h4>
+
+    <br>
+     
+      <img src={% static 'portfolio/clustering/heirar_clust.png' %} alt="api-logo" width="941" height="263">
+      <br>
     <p>Hierarchical clustering is a technique that creates a hierarchical tree-like structure of clusters, where each node represents a cluster. This method does not require the analyst to specify the number of clusters beforehand and is particularly useful when the dataset's structure is not well understood.
     </p>
     <h4>Agglomerative  Clustering</h4>
@@ -586,6 +599,11 @@ h3 {
 
 
     <h4>Density-based Clustering</h4>
+
+    <br>
+     
+      <img src={% static 'portfolio/clustering/density_based.png' %} alt="api-logo" width="941" height="263">
+      <br>
     <ul>
         <li>
           Density-based clustering is a type of clustering algorithm that identifies clusters based on the density of data points in the feature space.
@@ -632,7 +650,12 @@ h3 {
       <h3>Results</h3>
 <p>In the course of our analysis, particular emphasis was placed on the pivotal role of voltage and battery attributes. To illuminate our findings, we employed K-means clustering to discern distinct patterns within our dataset. Leveraging the resulting clusters, we embarked on a process of discretizing our output variables, notably the Remaining Useful Life (RUL) and discharge capacity. With a silhouette score of 11 indicating well-defined clusters, we juxtaposed the clustering outcomes alongside the RUL and discharge capacity values in a scatter plot. This strategic visualization allowed for a comprehensive examination of how these values are clustered and their interrelation within the broader dataset. By integrating clustering results with output variable discretization, we have gained valuable insights into the intricate relationships between input and output variables. This approach not only facilitates the identification of underlying patterns but also enhances our understanding of how these variables contribute to the overall clustering structure, thereby enriching the depth of our analysis and guiding informed decision-making processes.</p>
 
-
+        <br>
+      <p>Histogram of RUL </p>
+      <img src={% static 'portfolio/clustering/hist.png' %} alt="api-logo" width="941" height="263">
+      <br>
+      <p>It can be inferred from the above chart that, we can start with having 4 clusters and perform kmeans.</p>
+      <br>
       <h4>Finding the optimal K value for Kmeans using Silhoutte Method</h4>
       <br>
       <p>The highest silhoutte score was given for K value 11. So it is the optimal value suggested by this method.</p>
@@ -644,11 +667,18 @@ h3 {
 
 
       <h4>Output</h4>
+      <p>4 clusters are formed for this data by Kmeans model</p>
+      <img src={% static 'portfolio/clustering/kmeans_4.png' %} alt="api-logo" width="941" height="263">
       <br>
+
+      
       <p>11 clusters are formed for this data by Kmeans model</p>
       <img src={% static 'portfolio/clustering/Clustering output.png' %} alt="api-logo" width="941" height="263">
       <br>
       <h4>Hierachical Clustering</h4>
+      
+      <img src={% static 'portfolio/clustering/hclust.png' %} alt="api-logo" width="941" height="263">
+      <br>
 
       <h4>Dendogram using Complete Linkage</h4>
       <br>
@@ -670,11 +700,16 @@ h3 {
       
       <h4>Output</h4>
       <br>
-      <p>11 clusters are formed for this data by Hclust model</p>
+      <p>6 clusters are formed for this data by Hclust model</p>
       <img src={% static 'portfolio/clustering/hclust_single.png' %} alt="api-logo" width="941" height="263">
       <br>
 
-     
+      <h4>Based on the above dendograms, HClust is performed with a K value 6</h4>
+      <br>
+      
+      <img src={% static 'portfolio/clustering/hclust_scatter.png' %} alt="api-logo" width="941" height="263">
+      <br>
+     <p>This is similar to the clusters based on the Kmeans clustering but since the K value is higher it has split some clusters providing some valid insights for the data discretization process.</p>
       <h3>Conclusion</h3>
       <p>Integrating clustering analysis into our modeling framework not only provided valuable insights into battery performance but also significantly enriched our predictive capabilities for both Remaining Useful Life (RUL) and discharge capacity. By stratifying the data into distinct clusters based on similarities in key features, we were able to develop cluster-specific predictive models tailored to the unique degradation patterns observed within each cluster. This approach not only enhanced the accuracy of our RUL predictions but also enabled more precise estimates of discharge capacity over time. For instance, clusters exhibiting accelerated degradation rates were characterized by distinct sets of predictive variables, allowing us to identify early warning signs of capacity loss and predict RUL more accurately than traditional methods.</p>
       <p>Furthermore, the clustering analysis facilitated the identification of critical features driving variations in both RUL and discharge capacity across different battery states. By isolating the most influential variables within each cluster, we were able to refine our predictive models and capture subtle nuances in battery degradation dynamics more effectively. This comprehensive understanding of the underlying factors influencing RUL and discharge capacity enabled us to develop predictive models that are not only more accurate but also more robust to real-world variability. As a result, our approach holds immense promise for optimizing battery management strategies and prolonging the operational lifespan of battery systems in diverse applications, ranging from electric vehicles to renewable energy storage.</p>
