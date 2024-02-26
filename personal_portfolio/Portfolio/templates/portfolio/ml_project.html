@@ -185,6 +185,12 @@ p {
             font-size: 1.2em;
             line-height: 1.6em;
         }
+
+li 
+{
+            font-size: 1.2em;
+            line-height: 1.6em;
+        }
         img {
     max-width: 100%;
     height: auto;
@@ -228,6 +234,10 @@ h3 {
     font-weight: bold;
 }
     
+.indented {
+        display: inline-block;
+        margin-left: 40px; /* Adjust as needed */
+    }
 </style>
 
 <nav class="scrollable-nav">
@@ -521,7 +531,7 @@ h3 {
     <h4>Partitional Clustering</h4>
     <br>
      
-      <img src={% static 'portfolio/clustering/partitional_clust.png' %} alt="api-logo" width="941" height="263">
+      <img src={% static 'portfolio/clustering/partitional_clust.png' %} alt="api-logo" width="500" height="483">
       <br>
     <ul>
         <li>
@@ -543,7 +553,7 @@ h3 {
 
     <br>
      
-      <img src={% static 'portfolio/clustering/heirar_clust.png' %} alt="api-logo" width="941" height="263">
+      <img src={% static 'portfolio/clustering/heirar_clust.png' %} alt="api-logo" width="500" height="395">
       <br>
     <p>Hierarchical clustering is a technique that creates a hierarchical tree-like structure of clusters, where each node represents a cluster. This method does not require the analyst to specify the number of clusters beforehand and is particularly useful when the dataset's structure is not well understood.
     </p>
@@ -581,28 +591,28 @@ h3 {
         </li>
       </ul>
       
-     <h4>Commonly Used Distance Metrics</h4>
-     <h3>Euclidean Distance</h3>
+     <h3>Commonly Used Distance Metrics</h3>
+     <h4>Euclidean Distance</h4>
 <p>
   Perhaps the most widely used distance metric, Euclidean distance measures the straight-line distance between two data points in Euclidean space. It is calculated as the square root of the sum of squared differences between corresponding coordinates of two points. Euclidean distance is suitable for continuous numeric data and assumes that the data points are distributed in a continuous space.
 </p>
 
-<h3>Manhattan Distance</h3>
+<h4>Manhattan Distance</h4>
 <p>
   Also known as city block distance or taxicab distance, Manhattan distance measures the sum of the absolute differences between corresponding coordinates of two points. It represents the distance traveled along axes at right angles. Manhattan distance is suitable for data with attributes measured on different scales or for which the concept of straight-line distance may not be meaningful.
 </p>
 
-<h3>Cosine Similarity</h3>
+<h4>Cosine Similarity</h4>
 <p>
   Unlike Euclidean and Manhattan distances, cosine similarity measures the cosine of the angle between two vectors, representing the similarity in direction rather than magnitude. It is commonly used for text data, where documents are represented as vectors of word frequencies or TF-IDF scores. Cosine similarity is robust to differences in vector magnitudes and is effective for measuring similarity between sparse vectors.
 </p>
 
 
-    <h4>Density-based Clustering</h4>
+    <h3>Density-based Clustering</h3>
 
     <br>
      
-      <img src={% static 'portfolio/clustering/density_based.png' %} alt="api-logo" width="941" height="263">
+      <img src={% static 'portfolio/clustering/density_based.png' %} alt="api-logo" width="500" height="493">
       <br>
     <ul>
         <li>
@@ -620,96 +630,101 @@ h3 {
       </ul>
       
       <h3>Data Prep</h3>
-      <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/API_news.ipynb">News data collection from API</a></h4>
+      <br><br>
+      <div>
+        <span class="indented"> <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/API_news.ipynb">News data collection from API</a></h4> </span>
+    </div>
+<br>
       <p>Clustering algorithms involve mathematical operations such as calculating centroids, updating cluster assignments, or determining cluster distances. These operations are more straightforward to perform on numeric data, as mathematical operations are well-defined for numerical values. Handling categorical or text data requires additional preprocessing steps, such as one-hot encoding or feature scaling, to convert them into numeric format.
       </p>
+      <br>
       <h4>Before</h4>
       <br>
       <p>There are both qualitative and quantitative data types are present in the data</p>
       <img src={% static 'portfolio/clustering/data_prep_before.png' %} alt="api-logo" width="941" height="263">
+      <br>
       <br>
       <h4>After</h4>
       <br>
       <p>It only contains quantitative data and it is ready for clustering</p>
       <img src={% static 'portfolio/clustering/data_prep_after.png' %} alt="api-logo" width="941" height="263">
       <br>
-    
-      <h3>Code </h3>
-      <h4>Kmeans</h4>
+      <br>
       
-      <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/Clustering-kmeans.ipynb">Kmeans in Python</a></h4>
+      <h3>Code</h3>
+      <br><br>
+      <h4>Kmeans</h4>
+      <br>
+      <div>
+        <span class="indented"><h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/Clustering-kmeans.ipynb">Kmeans in Python</a></h4>  </span>
+      </div>
      
-   
+   <br><br>
 
       <h4>Hierachical Clustering</h4>
-     
-      <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/Clustering-hclust.ipynb">Hclust in R</a></h4>
-
+     <br> 
+      <div>
+        <span class="indented"><h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/Clustering-hclust.ipynb">Hclust in R</a></h4></span>
+    </div>
+<br><br>
      
 
       <h3>Results</h3>
+      <br>
 <p>In the course of our analysis, particular emphasis was placed on the pivotal role of voltage and battery attributes. To illuminate our findings, we employed K-means clustering to discern distinct patterns within our dataset. Leveraging the resulting clusters, we embarked on a process of discretizing our output variables, notably the Remaining Useful Life (RUL) and discharge capacity. With a silhouette score of 11 indicating well-defined clusters, we juxtaposed the clustering outcomes alongside the RUL and discharge capacity values in a scatter plot. This strategic visualization allowed for a comprehensive examination of how these values are clustered and their interrelation within the broader dataset. By integrating clustering results with output variable discretization, we have gained valuable insights into the intricate relationships between input and output variables. This approach not only facilitates the identification of underlying patterns but also enhances our understanding of how these variables contribute to the overall clustering structure, thereby enriching the depth of our analysis and guiding informed decision-making processes.</p>
 
         <br>
-      <p>Histogram of RUL </p>
-      <img src={% static 'portfolio/clustering/hist.png' %} alt="api-logo" width="941" height="263">
+        <h4 style="text-align: center;" >Histogram of RUL </h4>
+      <img src={% static 'portfolio/clustering/hist.png' %} alt="api-logo" width="500" height="392">
       <br>
       <p>It can be inferred from the above chart that, we can start with having 4 clusters and perform kmeans.</p>
       <br>
       <h4>Finding the optimal K value for Kmeans using Silhoutte Method</h4>
       <br>
       <p>The highest silhoutte score was given for K value 11. So it is the optimal value suggested by this method.</p>
-      <img src={% static 'portfolio/clustering/silhoutte.png' %} alt="api-logo" width="941" height="263">
+      <img src={% static 'portfolio/clustering/silhoutte.png' %} alt="api-logo" width="500" height="394">
       <br>
   
 
-      <h4>Kmeans</h4>
 
-
-      <h4>Output</h4>
-      <p>4 clusters are formed for this data by Kmeans model</p>
+      <h4>Kmeans - Output</h4>
+      <p>The output for the K Value (4), inferred from the histogram above</p>
       <img src={% static 'portfolio/clustering/kmeans_4.png' %} alt="api-logo" width="941" height="263">
       <br>
+      <p>On comparing the clusters with the RUL category and the discharge capacity plot, it shows that with the input fed we can predict the discharge capacity and the RUL category</p>
 
       
-      <p>11 clusters are formed for this data by Kmeans model</p>
+      <p><p>The output for the K Value (11), inferred from the Silhoutte method above</p></p>
       <img src={% static 'portfolio/clustering/Clustering output.png' %} alt="api-logo" width="941" height="263">
       <br>
+      <p>This gives more clusters but it offers a indepth insight about some of the clusters than the above result.</p>
+      <br>
       <h4>Hierachical Clustering</h4>
-      
-      <img src={% static 'portfolio/clustering/hclust.png' %} alt="api-logo" width="941" height="263">
       <br>
-
-      <h4>Dendogram using Complete Linkage</h4>
-      <br>
-      
-      <img src={% static 'portfolio/clustering/hclust.png' %} alt="api-logo" width="941" height="263">
-      <br>
-
-      <h4>Dendogram using Average Linkage</h4>
-      <br>
+      <h4>Output</h4>
     
-      <img src={% static 'portfolio/clustering/hclust_average.png' %} alt="api-logo" width="941" height="263">
+     <br>
+      <h4>Dendogram using Complete Linkage</h4>
+      <img src={% static 'portfolio/clustering/hclust.png' %} alt="api-logo" width="500" height="500">
+      <br>
+      <h4>Dendogram using Average Linkage</h4>
+    <br>
+      <img src={% static 'portfolio/clustering/hclust_average.png' %} alt="api-logo" width="500" height="500">
       <br>
 
       <h4>Dendogram using Single Linkage</h4>
       <br>
 
-      <img src={% static 'portfolio/clustering/hclust_single.png' %} alt="api-logo" width="941" height="263">
+      <img src={% static 'portfolio/clustering/hclust_single.png' %} alt="api-logo" width="500" height="500">
       <br>
-      
-      <h4>Output</h4>
-      <br>
-      <p>6 clusters are formed for this data by Hclust model</p>
-      <img src={% static 'portfolio/clustering/hclust_single.png' %} alt="api-logo" width="941" height="263">
-      <br>
+ 
 
-      <h4>Based on the above dendograms, HClust is performed with a K value 6</h4>
+      <p>Based on the above dendograms, It is inferred to HClust is performed with a K value 6<p>
       <br>
       
-      <img src={% static 'portfolio/clustering/hclust_scatter.png' %} alt="api-logo" width="941" height="263">
+      <img src={% static 'portfolio/clustering/hclust_scatter.png' %} alt="api-logo" width="500" height="500">
       <br>
-     <p>This is similar to the clusters based on the Kmeans clustering but since the K value is higher it has split some clusters providing some valid insights for the data discretization process.</p>
+     <p>This is similar to the clusters based on the Kmeans clustering but since the K value is 6 it has split some clusters providing some valid insights for the data discretization process.</p>
       <h3>Conclusion</h3>
       <p>Integrating clustering analysis into our modeling framework not only provided valuable insights into battery performance but also significantly enriched our predictive capabilities for both Remaining Useful Life (RUL) and discharge capacity. By stratifying the data into distinct clusters based on similarities in key features, we were able to develop cluster-specific predictive models tailored to the unique degradation patterns observed within each cluster. This approach not only enhanced the accuracy of our RUL predictions but also enabled more precise estimates of discharge capacity over time. For instance, clusters exhibiting accelerated degradation rates were characterized by distinct sets of predictive variables, allowing us to identify early warning signs of capacity loss and predict RUL more accurately than traditional methods.</p>
       <p>Furthermore, the clustering analysis facilitated the identification of critical features driving variations in both RUL and discharge capacity across different battery states. By isolating the most influential variables within each cluster, we were able to refine our predictive models and capture subtle nuances in battery degradation dynamics more effectively. This comprehensive understanding of the underlying factors influencing RUL and discharge capacity enabled us to develop predictive models that are not only more accurate but also more robust to real-world variability. As a result, our approach holds immense promise for optimizing battery management strategies and prolonging the operational lifespan of battery systems in diverse applications, ranging from electric vehicles to renewable energy storage.</p>
@@ -722,20 +737,23 @@ h3 {
 
 <section id="section4"> 
     <h2>ARM</h2>
-    <img src={% static 'portfolio/clustering/arm_main.png' %} alt="api-logo" width="941" height="263">
+    <img src={% static 'portfolio/clustering/arm_main.png' %} alt="api-logo" width="500" height="500">
     <a href="https://www.analytixlabs.co.in/blog/apriori-algorithm-in-data-mining/" target="_blank">
         Source:https://www.analytixlabs.co.in/blog/apriori-algorithm-in-data-mining/
     </a>
+    <br>
+    <br>
     <h4>Overview</h4>
    <p>Association Rule Mining (ARM) is a data mining technique used to discover relationships or associations between items or variables in a dataset. It is commonly applied to transactional data, where each transaction consists of a set of items purchased together. ARM aims to uncover patterns in these transactions that can provide valuable insights for various applications, such as market basket analysis and recommendation systems.
 
     For example, consider a retail store that records transactions from its customers. Each transaction contains a list of items purchased by a customer during a single visit to the store. By applying ARM to this transactional data, the store can discover associations between different items frequently purchased together. These associations can be represented as rules of the form "If {A} then {B}", indicating that customers who buy item A are likely to buy item B as well.</p> 
-    <h4>Describe ARM</h4>
-
-    <img src={% static 'portfolio/clustering/arm_formula.png' %} alt="api-logo" width="941" height="263">
+    <h4>Description</h4>
+<br>
+    <img src={% static 'portfolio/clustering/arm_formula.png' %} alt="api-logo" width="500" height="500">
     <a href="https://bicorner.com/2015/07/22/what-the-heck-are-association-rules-in-analytics/" target="_blank">
         Source:https://bicorner.com/2015/07/22/what-the-heck-are-association-rules-in-analytics/
     </a>
+    <br><br>
     <p>ARM involves analyzing transactional data to find relationships or associations between items or variables in the data. It helps in various areas such as market basket analysis and recommendation systems.</p>
     
     <h4>Support</h4>
@@ -764,67 +782,80 @@ h3 {
     <h4>Why Unnlabelled Transaction Data is used?</h4>
     <p>Unlabeled transaction data is preferred in Association Rule Mining (ARM) due to its flexibility and ability to uncover hidden patterns without predefined labels or categories. With unlabeled data, there's no need to specify predefined categories for items, allowing for the discovery of associations between any items present in the dataset. This approach enables the extraction of insights from raw transactional data, particularly in real-world scenarios where items may not come with predefined labels. Analyzing unlabeled transaction data simplifies the analysis process and facilitates the discovery of generalizable patterns that hold across different contexts. By focusing on the co-occurrence of items in transactions, ARM algorithms can identify common purchasing behaviors and item relationships, providing valuable insights for various industries and domains.</p>
    
+    <div>
+        <span class="indented">
     <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/API_news.ipynb">News data collection from API</a></h4>
-    
-    <h4>Before</h4>
+</span>
+</div>
+<br>
+    <h4>Before Preprocessing</h4>
     <br>
     <p>Json Response of the news data using API</p>
     <img src={% static 'portfolio/clustering/arm_before.png' %} alt="api-logo" width="941" height="263">
     <br>
-    <h4>After</h4>
+    <h4>After Preprocessing</h4>
     <br>
     <p>It contains the itemsets and the transaction ID for each transaction</p>
-    <img src={% static 'portfolio/clustering/arm_after.png' %} alt="api-logo" width="941" height="263">
+    <img src={% static 'portfolio/clustering/arm_after.png' %} alt="api-logo" width="500" height="463">
     <br>
   
     <h3>Code </h3>
-    
+
+
+<div>
+    <span class="indented">
     <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/Clustering-kmeans.ipynb">Association Rule Mining in R</a></h4>
-   
+</span>
+</div>
+<br><br>
    <h3>Results</h3>
 
    <br>
    <p>Association Network visualisation</p>
-   <img src={% static 'portfolio/clustering/network.png' %} alt="api-logo" width="941" height="263">
+   <img src={% static 'portfolio/clustering/network.png' %} alt="api-logo" width="500" height="500">
    <br>
-   <h4>Top 10 by Support</h4>
+   <p>
+    From the ARM network analysis of recent news text data, it becomes apparent that certain keywords such as "pixel," "meta," "quest," "hour," and others were prominently featured. Upon closer examination of this data, it is evident that there has been a significant focus on topics related to the Meta Quest Pro and the Apple iPhone over the past month. This suggests a notable trend in the news landscape, with increased coverage and discussions revolving around these particular subjects. Such insights gleaned from the analysis underscore the relevance and impact of these technological developments within the media sphere, reflecting evolving consumer interests and industry dynamics.</p>
    <br>
-   <p>The top 10 rules by support</p>
-   <img src={% static 'portfolio/clustering/arm_support.png' %} alt="api-logo" width="941" height="263">
+   <h4>Top 10 rules by Support</h4>
+   <br>
+
+   <img src={% static 'portfolio/clustering/arm_support.png' %} alt="api-logo" width="600" height="371">
    <br>
    <p>An intriguing observation from these association rules is the strong presence of specific electronic devices like "iphone" and "galaxy" in conjunction with mentions of "battery". The rule ({iphone} => {battery}) stands out with a relatively high confidence of 61.54% and a lift value of 8.58, indicating a significant association between discussions related to iPhones and the presence of battery-related topics. This suggests that battery performance is a crucial consideration in conversations or activities involving iPhones, possibly reflecting the importance of battery life in mobile devices. Similarly, the association between "galaxy" and "battery" is notable, although with a lower confidence and lift value compared to iPhones. Nonetheless, this association implies a correlation between discussions surrounding Galaxy devices and battery-related concerns, highlighting the significance of battery performance across different smartphone brands. Additionally, the presence of terms like "power" and "portable" further emphasizes the relevance of battery-related discussions in various contexts, from portable electronics to electric vehicles. Overall, these association rules shed light on the interconnectedness between electronic devices and battery-related topics, offering valuable insights into consumer preferences and technological considerations.</p>
    <br>
-   <h4>Top 10 by Confidence</h4>
+   <h4>Top 10 rules by Confidence</h4>
    <br>
-   <p>The top 10 rules based on confidence</p>
-   <img src={% static 'portfolio/clustering/arm_confidence.png' %} alt="api-logo" width="941" height="263">
+
+   <img src={% static 'portfolio/clustering/arm_confidence.png' %} alt="api-logo" width="600" height="371">
    <br>
    <p>One interesting aspect revealed by these association rules is the strong correlation between certain items or features and the presence of "battery" in the dataset. For instance, the rule ({iphone, new} => {battery}) stands out with a perfect confidence score, suggesting that whenever discussions or activities involving both "iphone" and "new" arise, the mention of "battery" is almost guaranteed. This association highlights a potential trend where the introduction of new iPhone models coincides with discussions about battery-related topics, indicating a significant focus on battery performance and technology advancements within the smartphone industry. Additionally, the association between "speed" and "battery" ({speed} => {battery}) showcases an interesting relationship, with a relatively high confidence score indicating a strong likelihood of battery mentions in contexts related to speed. This could hint at discussions surrounding the battery performance of high-speed electronic devices or electric vehicles, where power demands are often paramount. Overall, these association rules offer valuable insights into the interconnectedness of different features within the dataset, shedding light on underlying patterns and potential relationships that merit further exploration and analysis.</p>
-   <h4>Top 10 by Lift</h4>
+   <h4>Top 10 rules by Lift</h4>
    <br>
-   <p>The top 10 rules based on lift</p>
-   <img src={% static 'portfolio/clustering/arm_lift.png' %} alt="api-logo" width="941" height="263">
+
+   <img src={% static 'portfolio/clustering/arm_lift.png' %} alt="api-logo" width="600" height="371">
    <br>
   <p>The notable correlation between specific items or features and the mention of "battery" within the dataset. For instance, the rule ({iphone, new} => {battery}) stands out with a remarkably high lift value of 13.94, indicating a significant association between discussions or activities involving both "iphone" and "new" and the presence of "battery" in the same context. This suggests a compelling trend where the introduction of new iPhone models coincides with discussions about battery-related topics, underscoring the importance of battery performance in the realm of smartphone technology. Additionally, the rule ({speed} => {battery}) is particularly interesting due to its high lift value of 9.29, suggesting a strong correlation between discussions related to "speed" and mentions of "battery". This could imply a focus on battery performance in high-speed electronic devices or electric vehicles, where power demands are crucial. Overall, these association rules provide valuable insights into the interconnectedness of different features within the dataset, offering intriguing patterns and relationships that warrant further exploration and analysis.</p>
     <br>
-   <p>The association based on "IPhone" keyword on the LHS</p>
-   <img src={% static 'portfolio/clustering/iphone_network.png' %} alt="api-logo" width="941" height="263">
+   <h4>The association based on "IPhone" keyword on the LHS</h4>
+   <img src={% static 'portfolio/clustering/iphone_network.png' %} alt="api-logo" width="500" height="500">
    <br>
 
    <br>
-   <p>The association based on "Galaxy" keyword on the LHS</p>
-   <img src={% static 'portfolio/clustering/iphone_network.png' %} alt="api-logo" width="941" height="263">
+   <h4>The association based on "Galaxy" keyword on the LHS</h4>
+   <img src={% static 'portfolio/clustering/iphone_network.png' %} alt="api-logo" width="500" height="500">
    <br>
 
    <br>
-   <p>The association based on "EV" keyword on the LHS</p>
-   <img src={% static 'portfolio/clustering/ev_network.png' %} alt="api-logo" width="941" height="263">
+   <h4>The association based on "EV" keyword on the LHS</h4>
+   <img src={% static 'portfolio/clustering/ev_network.png' %} alt="api-logo" width="500" height="500">
    <br>
 
 
 <p>One particularly interesting association rule within the dataset is {iphone} => {battery}. With a relatively high support of 1.85%, this rule indicates that the purchase or discussion of iPhones often coincides with mentions of batteries. The confidence value of 61.54% suggests a strong predictive power, implying that when iPhones are present, there's a notable likelihood (approximately 61.54%) that batteries are also mentioned. Additionally, the lift value of 2.21 indicates a positive correlation between iPhones and batteries, meaning that the presence of iPhones tends to increase the likelihood of batteries being mentioned beyond what would be expected by chance alone. This association may reflect the importance of battery life in mobile devices like iPhones, influencing consumer discussions and purchases. Overall, this rule highlights a significant and meaningful association between iPhones and batteries, offering insights into current news related to batteries.</p>
-
+<br><br>
 <h3>Conclusion</h3>
+<br>
 <p>After delving into our association rules, it's clear as day that certain items love to hang out together in our dataset. Take the iPhone and battery duo, for instance – they're practically joined at the hip! With a whopping support of 1.85%, it's evident that whenever iPhones are on the agenda, batteries are quick to follow suit. And with a confidence rating of 61.54%, it's almost a given that battery chatter will accompany any discussion about iPhones. Not to mention, that lift value of 2.21 tells us this relationship is more than just happenstance – iPhones and batteries really do have a special bond.</p>
 <p>But it's not just iPhones and batteries – our association rules reveal a whole web of interconnected items, offering a fascinating glimpse into the trends and interests lurking within our dataset. From smartphones to portable power and market trends, it's like our data has its own secret language, and association rules are the key to unlocking its mysteries.
    <p>Moreover, analyzing news data provides additional insights into the factors that often appear together in headlines. This integration of news data further enriches our understanding of the relationships between different topics and highlights the interconnected nature of current events and consumer interests. By leveraging these insights, businesses can tailor their strategies to align with emerging trends and capitalize on the dynamics driving public discourse. In essence, association rule mining not only reveals hidden patterns within our dataset but also offers a window into the broader landscape of societal trends and preferences.</p> 
