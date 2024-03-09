@@ -8,11 +8,55 @@
 </div>
 </div>
 
+
+
 <div class="row justify-content-center mb-3">
     <div class="col-md-9 text-center">
-        <h1 id="hometext" class="font-weight-bold"> Hey!😁 <br /> I'm SANTHOSH  </h1>
+        <h1 id="hometext" class="font-weight-bold"> Hey!😁 <br /> I'm <span id="typed-text"></span><span class="cursor"></span></h1>
     </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var phrases = ["SANTHOSH", "A DATA SCIENTIST", "Looking for Opportunities"];
+    var typedTextElement = document.getElementById("typed-text");
+    var cursorElement = document.querySelector(".cursor");
+    var currentPhraseIndex = 0;
+    var currentCharIndex = 0;
+    var isTyping = true;
+
+    function typeText() {
+        var currentPhrase = phrases[currentPhraseIndex];
+
+        if (isTyping) {
+            if (currentCharIndex < currentPhrase.length) {
+                typedTextElement.textContent += currentPhrase.charAt(currentCharIndex);
+                currentCharIndex++;
+                setTimeout(typeText, 200); // Adjust the typing speed by changing the timeout value
+            } else {
+                isTyping = false;
+                setTimeout(eraseText, 1000); // Wait for 1 second before erasing
+            }
+        } else {
+            if (currentCharIndex > 0) {
+                typedTextElement.textContent = currentPhrase.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+                setTimeout(eraseText, 100); // Adjust the erasing speed by changing the timeout value
+            } else {
+                isTyping = true;
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                setTimeout(typeText, 500); // Wait for 0.5 second before typing next phrase
+            }
+        }
+    }
+
+    function eraseText() {
+        typeText();
+    }
+
+    typeText();
+});
+</script>
 
 
 <h2 class="mt-5">Portfolio</h2>

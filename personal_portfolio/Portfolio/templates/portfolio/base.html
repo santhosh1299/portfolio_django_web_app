@@ -11,7 +11,7 @@
 <link rel="icon" href="{%static 'portfolio/logo.png'%}">
 <link href="https://fonts.googleapis.com/css?family=Bellota+Text&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -97,6 +97,35 @@ nav {
 </style>
 
 <!--dispersion-->
+
+
+<style>
+  .cursor {
+      display: inline-block;
+      width: 0.2em;
+      height: 1.2em;
+      background-color: black;
+      animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+      0%, 100% {
+          opacity: 1;
+      }
+      50% {
+          opacity: 0;
+      }
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 1em; /* Change the width to control the length of the cursor line */
+    height: 0.1em; /* Change the height to control the thickness of the cursor line */
+    background-color: black;
+    animation: blink 1s infinite;
+}
+  </style>
+
   </head>
   
   <body>
