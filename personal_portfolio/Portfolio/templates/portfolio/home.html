@@ -18,7 +18,7 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    var phrases = ["SANTHOSH", "A DATA SCIENTIST", "Looking for Opportunities"];
+    var phrases = ["SANTHOSH", "DATA SCIENTIST", "DATA ANALYST","ML ENGINEER"];
     var typedTextElement = document.getElementById("typed-text");
     var cursorElement = document.querySelector(".cursor");
     var currentPhraseIndex = 0;
@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", function() {
             if (currentCharIndex < currentPhrase.length) {
                 typedTextElement.textContent += currentPhrase.charAt(currentCharIndex);
                 currentCharIndex++;
-                setTimeout(typeText, 200); // Adjust the typing speed by changing the timeout value
+                setTimeout(typeText, 120); // Adjust the typing speed by changing the timeout value
             } else {
                 isTyping = false;
-                setTimeout(eraseText, 1000); // Wait for 1 second before erasing
+                setTimeout(eraseText, 800); // Wait for 1 second before erasing
             }
         } else {
             if (currentCharIndex > 0) {
@@ -45,9 +45,9 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 isTyping = true;
                 currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-                setTimeout(typeText, 500); // Wait for 0.5 second before typing next phrase
+                setTimeout(typeText, 400); // Wait for 0.5 second before typing next phrase
             }
-        }
+        } 
     }
 
     function eraseText() {
@@ -59,9 +59,72 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
+<br><br>
+
+<div class="text-center">
+    <h1 id="hometext" class="font-weight-bold"> 
+        <div class="summary">
+            <span>2+ years of Experience</span>
+            <span>|</span>
+            <span>10+ projects</span>
+        </div>
+    </h1>
+</div>
+
+<br><br><br><br><br><br><br>
+
+<div class="why-hire-me">
+    <h2>Why Hire Me?</h2>
+    <div class="button-group">
+        <h3>Programming Languages:</h3>
+        <div class="button-box">Python</div>
+        <div class="button-box">SQL</div>
+        <div class="button-box">R</div>
+        <div class="button-box">Java</div>
+        <div class="button-box">C</div>
+        <div class="button-box">C++</div>
+    </div>
+    <div class="button-group">
+        <h3>Data Science:</h3>
+        <div class="button-box">Data Analysis - (Microsoft Excel, Google Sheets, Tableau, SnowFlake, Pandas)</div>
+        <div class="button-box">Machine learning</div>
+        <div class="button-box">Deep Learning - (Neural Networks, Transformers, Keras, PyTorch, TensorFlow, Large Language Models LLM)</div>
+        <div class="button-box">Big Data</div>
+    </div>
+    <div class="button-group">
+        <h3>Cloud:</h3>
+        <div class="button-box">AWS - (Lambda, EC2, SageMaker, Comprehend)</div>
+        <div class="button-box">Azure - (Form Recognizer)</div>
+        <div class="button-box">Google Cloud - (Compute)</div>
+    </div>
+    <div class="button-group">
+        <h3>Statistics:</h3>
+        <div class="button-box">Statistical Techniques (A/B) Testing</div>
+    </div>
+    <div class="button-group">
+        <h3>Other Skills:</h3>
+        <div class="button-box">Docker</div>
+        <div class="button-box">CI/CD pipeline - (Gitlab, Github)</div>
+        <div class="button-box">Web - (Django, Flask, REST APIs)</div>
+    </div>
+    <div class="button-group">
+        <h3>Soft Skills:</h3>
+        <div class="button-box">Complexity Analysis</div>
+        <div class="button-box">Troubleshooting</div>
+        <div class="button-box">Communication</div>
+        <div class="button-box">Documentation</div>
+    </div>
+</div>
+
+
 <h2 class="mt-5">Portfolio</h2>
 <hr>
 <div class="row">
+
+
+    
+
+
 {% for  project in projects  %}
 <div class="col-lg-4 col-md-6">
     
