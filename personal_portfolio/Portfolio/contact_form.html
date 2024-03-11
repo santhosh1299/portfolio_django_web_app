@@ -1,0 +1,32 @@
+{%extends 'portfolio/home.html'%}
+
+{%block content%}
+
+  <!-- Contact Form -->
+  <div id="contact-form">
+    <h2>Contact Me</h2>
+    <form method="post" id="contact-form">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+
+
+{% if messages %}
+{% for message in messages %}
+    {% if message.tags == 'success' %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endif %}
+{% endfor %}
+{% endif %}
+
+{%endblock%}

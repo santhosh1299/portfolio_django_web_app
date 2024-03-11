@@ -98,6 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME' : 'django.middleware.clickjacking.XFrameOptionsMiddleware',
     },
 ]
 
@@ -128,3 +129,10 @@ try:
     from .local_settings import *
 except ImportError:
     print("Looks like there is no Local_settings. You must be on Production! ")
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Your SMTP server
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'santhoshmanoharan.edu@gmail.com'  # Your email address
+EMAIL_HOST_PASSWORD = 'ftby pjhm rwqs kkuz'  # Your email password
