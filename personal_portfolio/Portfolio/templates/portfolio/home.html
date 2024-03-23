@@ -3,25 +3,131 @@
 <div class="container">
   <div class="row justify-content-center mt-5" style="padding-top: 10px">
     <div
-      class="col-md-6 order-md-2 d-flex flex-column justify-content-center align-items-center text-center"
+      class="col-md-8 order-md-2 d-flex flex-column justify-content-center align-items-center text-center"
     >
-      <h1 class="font-weight-bold mb-3">Hey!😁</h1>
-      <h2 class="font-weight-bold mb-4">
+      <h1 class="font-weight-bold mb-3" style="font-size: 58px">Hey!😁</h1>
+      <h2 class="font-weight-bold mb-4" style="font-size: 58px">
         I'm <span id="typed-text"></span><span class="cursor"></span>
       </h2>
       <div class="summary mb-4">
-        <span><strong>2+ years of Experience</strong></span>
-        <span class="ml-3 mr-3">|</span>
-        <span><strong>10+ projects</strong></span>
+        <span style="font-size: 28px">2+ Years of Experience</span>
+        <span class="ml-3 mr-3" style="font-size: 28px">|</span>
+        <span style="font-size: 28px">10+ Projects</span>
       </div>
     </div>
 
-    <div class="col-md-6 order-md-1 text-center">
+    <div class="col-md-4 order-md-1 text-center">
+      <!-- Modified col-md-6 -->
       <img
         class="img-fluid rounded-circle mb-4"
         src="{% static 'portfolio/santhosh_pic.PNG' %}"
         alt="Santhosh"
+        width="200"
+        height="200"
       />
+    </div>
+  </div>
+  <!-- <div class="row mt-5">
+    <div class="col-md-6">
+      <div class="education border p-3">
+        <h2 class="text-center mb-4">
+          <i class="fas fa-graduation-cap"></i> Education
+        </h2>
+        <div class="education-item">
+          <h3>Master of Science in Data Science</h3>
+          <p>University of Colorado Boulder, Aug 2023 - May 2025</p>
+        </div>
+        <div class="education-item">
+          <h3>Bachelors in Computer Science</h3>
+          <p>Anna University, Aug 2017 - May 2021</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="work-experience border p-3">
+        <h2 class="text-center mb-4">
+          <i class="fas fa-briefcase"></i> Work Experience
+        </h2>
+        <div class="work-item">
+          <h3>Data Scientist</h3>
+          <p>
+            Virtusa Consulting Services Private Limited, Sep 2021 – Jun 2023
+          </p>
+          <p>Description of work</p>
+        </div>
+        <div class="work-item">
+          <h3>ML Intern</h3>
+          <p>Larson and Toubro Valves Limited, May 2021 – Aug 2021</p>
+          <p>Description of work</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <div class="education border p-3">
+        <h2 class="text-center mb-4">
+          <i class="fas fa-graduation-cap"></i> Education Journey
+        </h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Master of Science in Data Science</h3>
+              <p>University of Colorado Boulder, Aug 2023 - May 2025</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Bachelors in Computer Science</h3>
+              <p>Anna University, Aug 2017 - May 2021</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="work-experience border p-3">
+        <h2 class="text-center mb-4">
+          <i class="fas fa-briefcase"></i> Work Experience Journey
+        </h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Data Scientist</h3>
+              <p>
+                Virtusa Consulting Services Private Limited, Sep 2021 – Jun 2023
+              </p>
+              <p style="text-align: justify">
+                Led innovative projects across various domains, specializing in
+                developing AI/ML solutions to enhance outputs and accuracy.
+                Leveraged cloud services and custom models to drive
+                comprehensive reports and streamline operations. Implemented
+                cutting-edge anomaly detection methods to ensure data integrity
+                and maximize efficiency. Developed APIs for seamless model
+                deployment, increasing user interaction and driving business
+                growth. Provided exceptional customer service, understanding
+                client needs and delivering tailored solutions for optimal
+                outcomes.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>ML Intern</h3>
+              <p>Larson and Toubro Valves Limited, May 2021 – Aug 2021</p>
+              <p style="text-align: justify">
+                Transformed 4 ML research papers into functional code,
+                conceptualizing an automated document data capture solution with
+                PyTorch and OpenCV 3. Achieved an over 80% reduction in data
+                entry time, optimizing data processing workflows for enhanced
+                efficiency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -89,7 +195,6 @@
           </ul>
         </div>
       </div>
-      <!-- Other skill categories go here -->
     </div>
   </div>
 
@@ -115,7 +220,7 @@
       />
       {% endif %}
       <h3 class="mt-3">{{project.title}}</h3>
-      <p>{{ project.description }}</p>
+      <p style="text-align: justify">{{ project.description }}</p>
     </div>
     {% endfor %}
   </div>
@@ -151,6 +256,12 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
   .skill-category h3 {
@@ -187,16 +298,89 @@
   .custom-image {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
   }
 
   .custom-image:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
   hr {
     border-color: #ddd;
     margin-top: 40px;
+  }
+  .timeline {
+    position: relative;
+    padding: 0;
+  }
+
+  .timeline-item {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  .timeline-content {
+    background-color: #f8f9fa; /* Change to match the background color of the homepage */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .timeline-item:nth-child(even) .timeline-content {
+    order: -1;
+  }
+
+  .timeline-content h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .timeline-content p {
+    margin-bottom: 10px;
+  }
+
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #ccc;
+    z-index: 0; /* Added */
+  }
+
+  .timeline-item:first-child::before {
+    top: 0;
+  }
+
+  .timeline-item:last-child::before {
+    bottom: 0;
+  }
+
+  .timeline-item::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 4px);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transform: translateX(-50%);
+    z-index: 2; /* Added */
+  }
+
+  @media (max-width: 767px) {
+    .timeline-item {
+      flex-direction: column;
+    }
   }
 </style>
 
