@@ -865,12 +865,175 @@ h3 {
 
 <section id="section5">
     <h2>NaiveBayes</h2>
-    <p>This is the content of Section 4.</p>
+    <img src={% static 'portfolio/NB & DecTree/nb_1.jpg' %} alt="api-logo" width="500" height="500">
+    <br>
+    <h3>Overview</h3>
+    <p>Naive Bayes is a simple but powerful probabilistic classification algorithm based on Bayes' theorem with the "naive" assumption of independence between features. Despite its simplicity, it's widely used in various applications due to its efficiency and effectiveness, particularly in text classification and spam filtering.</p>
+
+<p>One of the key applications of Naive Bayes is in text classification tasks. It's commonly used for sentiment analysis, document categorization, topic classification, and spam detection. In sentiment analysis, Naive Bayes can determine whether a piece of text expresses positive, negative, or neutral sentiment based on the words used. For document categorization, it can classify documents into predefined categories such as news articles, emails, or research papers. In spam detection, Naive Bayes can identify whether an email is spam or not based on its content and other features.</p>
+
+<p>Another important application of Naive Bayes is in medical diagnosis and healthcare analytics. It can be used to predict the likelihood of a patient having a particular disease based on symptoms, test results, and other medical data. Naive Bayes classifiers have been employed in various medical domains, including cancer detection, disease risk assessment, and patient outcome prediction.</p>
+
+<h2>Applications of Naive Bayes</h2>
+
+<p>Naive Bayes is a versatile classification algorithm with numerous applications across different domains:</p>
+
+<ul>
+  <li><strong>Text Classification:</strong> Naive Bayes is extensively used in sentiment analysis, document categorization, topic classification, and spam detection tasks. It can analyze text data to determine sentiment, categorize documents, identify topics, and detect spam emails efficiently.</li>
+
+  <li><strong>Healthcare Analytics:</strong> In medical diagnosis, Naive Bayes can predict the likelihood of a patient having a particular disease based on symptoms and medical data. It's applied in cancer detection, disease risk assessment, and patient outcome prediction.</li>
+
+  <li><strong>Recommendation Systems:</strong> Naive Bayes is employed in recommendation systems to analyze user preferences and item features, recommending products, movies, music, or articles based on user interests.</li>
+
+  <li><strong>Fraud Detection:</strong> In fraud detection, Naive Bayes identifies potentially fraudulent transactions or activities by analyzing patterns and features associated with known fraudulent behavior.</li>
+
+  <li><strong>Anomaly Detection:</strong> Naive Bayes detects unusual patterns in data, such as network intrusions or credit card fraud, by identifying deviations from normal behavior.</li>
+
+  <li><strong>Document Summarization:</strong> Naive Bayes aids in summarizing documents by extracting key information and identifying important content.</li>
+
+  <li><strong>Customer Segmentation:</strong> It helps in segmenting customers based on their behavior, preferences, and demographics, facilitating targeted marketing strategies.</li>
+
+  <li><strong>Market Basket Analysis:</strong> Naive Bayes is used to analyze customer purchase patterns and identify associations between items bought together in transactions.</li>
+
+  <li><strong>Weather Prediction:</strong> In meteorology, Naive Bayes assists in predicting weather conditions by analyzing historical data and environmental factors.</li>
+</ul>
+
+
+<h2>Standard Multinomial Naive Bayes</h2>
+
+<p>Standard Multinomial Naive Bayes is a variant of the Naive Bayes algorithm that is specifically designed for text classification tasks, where the features are typically discrete word counts or frequencies. It's widely used in natural language processing (NLP) applications such as sentiment analysis, document categorization, and spam filtering. Let's delve into the details of how Multinomial Naive Bayes works and its key components:</p>
+
+<ul>
+  <li><strong>Probability Model:</strong> Multinomial Naive Bayes models the probability distribution of word occurrences in documents using a multinomial distribution. It assumes that each feature (word) follows a multinomial distribution conditioned on the class label.</li>
+
+  <li><strong>Feature Representation:</strong> In text classification tasks, documents are represented as feature vectors, where each feature represents the count or frequency of a word in the document. Typically, a bag-of-words or TF-IDF (Term Frequency-Inverse Document Frequency) representation is used.</li>
+
+  <li><strong>Class Prior Probability:</strong> Multinomial Naive Bayes calculates the prior probability of each class based on the frequency of class occurrences in the training data. This provides the initial probability of each class before observing any features.</li>
+
+  <li><strong>Conditional Probability:</strong> The algorithm computes the conditional probability of observing each feature (word) given the class label using the multinomial distribution. It estimates the likelihood of observing a particular word in documents belonging to a specific class.</li>
+
+  <li><strong>Naive Assumption:</strong> Similar to the standard Naive Bayes algorithm, Multinomial Naive Bayes makes the "naive" assumption of feature independence, i.e., it assumes that the occurrence of each word is independent of the occurrences of other words within the same document, given the class label.</li>
+
+  <li><strong>Laplace Smoothing:</strong> To handle the issue of zero probabilities for unseen words in the test data, Laplace smoothing (or additive smoothing) is often applied. It adds a small smoothing parameter to the word counts to ensure that no probability becomes zero.</li>
+
+  <li><strong>Classification Decision:</strong> Finally, to classify a new document, Multinomial Naive Bayes applies Bayes' theorem to compute the posterior probability of each class given the observed features. The class with the highest posterior probability is assigned as the predicted class for the document.</li>
+</ul>
+
+<p><strong>Benefits of Multinomial Naive Bayes:</strong></p>
+<ul>
+  <li>Efficient: It's computationally efficient and scales well with large datasets.</li>
+  <li>Effective for Text Data: Well-suited for text classification tasks due to its ability to handle discrete features like word counts.</li>
+  <li>Simple and Interpretable: The algorithm is easy to understand and interpret, making it suitable for both beginners and experts in NLP.</li>
+</ul>
+
+
+
+<h2>Bernoulli Naive Bayes</h2>
+
+<p>Bernoulli Naive Bayes is another variant of the Naive Bayes algorithm commonly used in text classification tasks, particularly when the feature vectors are binary-valued. It's well-suited for applications such as sentiment analysis, document categorization, and spam filtering. Let's explore the details of how Bernoulli Naive Bayes operates and its key aspects:</p>
+
+<ul>
+  <li><strong>Probability Model:</strong> Bernoulli Naive Bayes models the probability distribution of binary feature occurrences in documents using a Bernoulli distribution. It assumes that each feature (word) follows a Bernoulli distribution conditioned on the class label.</li>
+
+  <li><strong>Feature Representation:</strong> In Bernoulli Naive Bayes, documents are represented as binary feature vectors, where each feature indicates the presence (1) or absence (0) of a word in the document. This binary representation is suitable for scenarios where only the presence of words matters, not their frequencies.</li>
+
+  <li><strong>Class Prior Probability:</strong> Similar to other Naive Bayes variants, Bernoulli Naive Bayes calculates the prior probability of each class based on the frequency of class occurrences in the training data, providing the initial probability of each class before observing any features.</li>
+
+  <li><strong>Conditional Probability:</strong> The algorithm computes the conditional probability of observing each feature (word) given the class label using the Bernoulli distribution. It estimates the likelihood of observing a particular word in documents belonging to a specific class.</li>
+
+  <li><strong>Naive Assumption:</strong> Bernoulli Naive Bayes, like other Naive Bayes algorithms, makes the "naive" assumption of feature independence, assuming that the presence or absence of each word is independent of other words within the same document, given the class label.</li>
+
+  <li><strong>Laplace Smoothing:</strong> To handle zero probabilities for unseen words in the test data, Laplace smoothing (or additive smoothing) can be applied in Bernoulli Naive Bayes. It adds a small smoothing parameter to the feature counts to prevent zero probabilities.</li>
+
+  <li><strong>Classification Decision:</strong> To classify a new document, Bernoulli Naive Bayes applies Bayes' theorem to compute the posterior probability of each class given the observed features. The class with the highest posterior probability is assigned as the predicted class for the document.</li>
+</ul>
+
+<p><strong>Benefits of Bernoulli Naive Bayes:</strong></p>
+<ul>
+  <li>Effective for Binary Features: Well-suited for text classification tasks with binary feature representations, such as presence or absence of words.</li>
+  <li>Simple and Efficient: Like other Naive Bayes algorithms, Bernoulli Naive Bayes is computationally efficient and easy to implement.</li>
+  <li>Interpretability: The algorithm provides interpretable results, making it suitable for explaining the classification decisions.</li>
+</ul>
+
+
+<h2>Data Prep</h2>
+
+<h3>Before Cleaning</h3>
+
+<h4>Supervised Learning models will take only labelled data and python only take numerical input.</h4>
+   <img src={% static 'portfolio/NB & DecTree/nb_before.png'' %} alt="api-logo" width="500" height="500">
+   <br>
+
+<h3>After Cleaning</h3>
+
+<h4>All the categorical columns are converted to numerical values.</h4>
+   <img src={% static 'portfolio/NB & DecTree/nb_after.png'' %} alt="api-logo" width="500" height="500">
+   <br>
+
+   <h3>Code </h3>
+
+
+   <div>
+       <span class="indented">
+       <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/Clustering-kmeans.ipynb">Association Rule Mining in R</a></h4>
+   </span>
+
+
 </section>
 
 <section id="section6">
     <h2>DecTrees</h2>
-    <p>This is the content of Section 4.</p>
+    <img src={% static 'portfolio/NB & DecTree/dtree_1.jpg' %} alt="api-logo" width="500" height="500">
+    <br>
+    <h3>Overview</h3>
+    <p>Decision Trees are like maps that guide decisions based on a series of questions. Each question leads to more questions until a conclusion is reached. Imagine navigating a flowchart where each step helps determine the best course of action. Similarly, Decision Trees start with a broad question and gradually narrow down options based on the answers provided. This intuitive approach makes Decision Trees easy to understand, even for those unfamiliar with technical concepts.</p>
+    <p>Now, let's delve into how Decision Trees are trained. During training, the algorithm learns from existing data to create this decision-making map. It analyzes different features, such as age or income, and splits the data into groups based on the most informative questions. By repeatedly asking and refining these questions, the algorithm constructs a tree-like structure that accurately predicts outcomes. This process mimics how humans make decisions, making it accessible and relatable to non-technical team members.</p>
+    <p>As the Decision Tree is trained, it aims to minimize confusion and maximize clarity in decision-making. It's like organizing information into categories, making it easier to process and act upon. Through this iterative process, the Decision Tree becomes a valuable tool for guiding future decisions, empowering teams to navigate complex scenarios with confidence.</p>
+    <img src={% static 'portfolio/NB & DecTree/dtree_2.png' %} alt="api-logo" width="500" height="500">
+    <br>
+    <h2>Decision Making Process</h2>
+    <ul>
+      <li><strong>Tree Structure:</strong> Decision Trees start with a root node representing the entire dataset and recursively split the data into smaller subsets as they move down the tree.</li>
+      <li><strong>Node Splitting:</strong> At each node, the algorithm selects features and split points to maximize subset homogeneity.</li>
+      <li><strong>Stopping Criteria:</strong> The splitting process continues until specific criteria, such as maximum depth or minimum impurity, are met.</li>
+    </ul>
+  
+    <h2>Training Process</h2>
+    <p><strong>Overview:</strong> During training, Decision Trees learn from existing data to create decision-making maps.</p>
+    <h3>Feature Selection</h3>
+    <ul>
+      <li><strong>Criteria:</strong> Features are evaluated based on criteria such as Gini impurity or entropy to determine the best splits.</li>
+      <li><strong>Information Gain:</strong> Information gain quantifies the reduction in impurity achieved by splitting data on a particular feature.</li>
+    </ul>
+    <h3>Recursive Splitting</h3>
+    <ul>
+      <li><strong>Partitioning Data:</strong> The algorithm partitions the dataset into subsets based on feature values to create homogeneous subsets.</li>
+      <li><strong>Stopping Criteria:</strong> The recursive splitting process continues until stopping criteria, like maximum depth or minimum impurity decrease, are met.</li>
+    </ul>
+  
+    <h2>Prediction Process</h2>
+    <p><strong>Overview:</strong> Predictions for new instances involve traversing the tree from the root to a leaf node based on feature values.</p>
+    <h3>Traversal</h3>
+    <ul>
+      <li><strong>Decision Path:</strong> The tree is traversed, evaluating feature values at each node to determine the appropriate branch.</li>
+      <li><strong>Leaf Node Prediction:</strong> Once a leaf node is reached, the associated prediction is returned.</li>
+    </ul>
+
+    <h2>Data Prep</h2>
+
+    <h3>Before Cleaning</h3>
+    
+    <h4>Supervised Learning models will take only labelled data and python only take numerical input.</h4>
+       <img src={% static 'portfolio/NB & DecTree/nb_before.png'' %} alt="api-logo" width="500" height="500">
+       <br>
+    
+    <h3>After Cleaning</h3>
+    
+    <h4>All the categorical columns are converted to numerical values.</h4>
+       <img src={% static 'portfolio/NB & DecTree/nb_after.png'' %} alt="api-logo" width="500" height="500">
+       <br>
+    
+
 </section>
 
 <section id="section7">
