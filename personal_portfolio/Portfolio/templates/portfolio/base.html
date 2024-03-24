@@ -1,204 +1,270 @@
-<!doctype html>
+<!DOCTYPE html>
 {%load static%}
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap   CSS -->
-   
-<link rel="icon" href="{%static 'portfolio/logo.png'%}">
-<link href="https://fonts.googleapis.com/css?family=Bellota+Text&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.side-heading').forEach(function (link) {
-          link.addEventListener('click', function (e) {
-              e.preventDefault();
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <link rel="icon" href="{%static 'portfolio/logo.png'%}" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bellota+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".side-heading").forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
 
-              var targetId = this.getAttribute('href').substring(1);
-              var targetSection = document.getElementById(targetId);
+            var targetId = this.getAttribute("href").substring(1);
+            var targetSection = document.getElementById(targetId);
 
-              if (targetSection) {
-                  window.scrollTo({
-                      top: targetSection.offsetTop + 100, // Adjust as needed
-                      behavior: 'smooth',
-                  });
+            if (targetSection) {
+              window.scrollTo({
+                top: targetSection.offsetTop + 100, // Adjust as needed
+                behavior: "smooth",
+              });
 
-                  // Mark the clicked link as active
-                  document.querySelectorAll('.side-heading').forEach(function (otherLink) {
-                      otherLink.classList.remove('active');
-                  });
-                  this.classList.add('active');
-              }
+              // Mark the clicked link as active
+              document
+                .querySelectorAll(".side-heading")
+                .forEach(function (otherLink) {
+                  otherLink.classList.remove("active");
+                });
+              this.classList.add("active");
+            }
           });
+        });
       });
-  });
-</script>
-<link rel="stylesheet" href="{% static 'portfolio/custom.css' %}">
+    </script>
+    <link rel="stylesheet" href="{% static 'portfolio/custom.css' %}" />
     <title>S A N</title>
-<!-- ml_project header-->
+    <!-- ml_project header-->
 
-<style>
+    <style>
+      body {
+        margin: 0;
+      }
+      nav {
+        position: fixed;
+        top: 50%; /* Adjust as needed */
+        right: 20px;
 
-body {
-    margin: 0;
-}
-nav {
-    position: fixed;
-    top: 50%; /* Adjust as needed */
-    right: 20px;
-   
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 2;
-}
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 2;
+      }
 
-#side-heading {
-    color: #343a40;
-    text-decoration: none;
-    font-weight: normal;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
+      #side-heading {
+        color: #343a40;
+        text-decoration: none;
+        font-weight: normal;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease,
+          transform 0.3s ease;
+      }
 
-#side-heading:hover {
-    background-color: #343a40;
-    color: #fff;
-    transform: scale(1.05);
-}
+      #side-heading:hover {
+        background-color: #343a40;
+        color: #fff;
+        transform: scale(1.05);
+      }
 
-#side-heading.active {
-    font-weight: bold;
-}
+      #side-heading.active {
+        font-weight: bold;
+      }
 
+      .text-center {
+        text-align: center;
+      }
 
-.text-center {
-    text-align: center;
-}
+      .summary {
+        display: inline-block; /* Ensure the summary stays inline */
+      }
 
-.summary {
-    display: inline-block; /* Ensure the summary stays inline */
-}
+      .button-box {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
 
-.button-box {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
+      .button-box:hover {
+        background-color: #0056b3;
+      }
+    </style>
 
-.button-box:hover {
-    background-color: #0056b3;
-}
+    <!-- ml_project ends-->
 
+    <!--dispeersion -->
+    <style>
+      .custom-image {
+        height: 350px;
+        width: 650px;
+        object-fit: cover; /* Optional: Maintain aspect ratio and cover the specified dimensions */
+      }
+    </style>
 
-</style>  
+    <!--dispersion-->
 
-<!-- ml_project ends-->
+    <style>
+      .cursor {
+        display: inline-block;
+        width: 0.2em;
+        height: 1.2em;
+        background-color: black;
+        animation: blink 1s infinite;
+      }
 
-<!--dispeersion -->
-<style>
-  .custom-image {
-    height: 350px;
-    width: 650px;
-    object-fit: cover; /* Optional: Maintain aspect ratio and cover the specified dimensions */
-  }
-</style>
-
-<!--dispersion-->
-
-
-<style>
-  .cursor {
-      display: inline-block;
-      width: 0.2em;
-      height: 1.2em;
-      background-color: black;
-      animation: blink 1s infinite;
-  }
-  
-  @keyframes blink {
-      0%, 100% {
+      @keyframes blink {
+        0%,
+        100% {
           opacity: 1;
-      }
-      50% {
+        }
+        50% {
           opacity: 0;
+        }
       }
-  }
 
-  .cursor {
-    display: inline-block;
-    width: 1em; /* Change the width to control the length of the cursor line */
-    height: 0.1em; /* Change the height to control the thickness of the cursor line */
-    background-color: black;
-    animation: blink 1s infinite;
-}
+      .cursor {
+        display: inline-block;
+        width: 1em; /* Change the width to control the length of the cursor line */
+        height: 0.1em; /* Change the height to control the thickness of the cursor line */
+        background-color: black;
+        animation: blink 1s infinite;
+      }
 
-body {
-        font-family: 'Bellota Text', sans-serif; /* Use Bellota Text font for body text */
-    }
+      body {
+        font-family: "Bellota Text", sans-serif; /* Use Bellota Text font for body text */
+      }
 
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Lato', sans-serif; /* Use Lato font for headings */
-    }
-
-  </style>
-
-
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Lato", sans-serif; /* Use Lato font for headings */
+      }
+    </style>
   </head>
-  
+
   <body>
-      <nav id="topNav" class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;" > 
-  <div class="container" >
+    <nav
+      id="topNav"
+      class="navbar navbar-expand-lg navbar-light bg-light"
+      style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000"
+    >
+      <div class="container">
         <a class="navbar-brand" href="{% url 'home' %}">
-        <img src="{% static 'portfolio/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="SAN's Logo">
-        <span>S A N</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{%static 'portfolio/santhosh
-          2resume.pdf' %}" target="_blank">Resume</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.linkedin.com/in/santhosh-pattamudu-manoharan/" target="_blank">LinkedIn</a>
-        </li>
-       
-        
-        <li class="nav-item">
-            <a role="button" href="{% url 'blog:all_blogs' %}" class="btn btn-primary">Blog</a>
-        </li>
-      </ul>
-    
-    </div>
-  </div>
-  </nav>
+          <img
+            src="{% static 'portfolio/logo.png' %}"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt="SAN's Logo"
+          />
+          <span>S A N</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="{%static 'portfolio/santhosh
+          2resume.pdf' %}"
+                target="_blank"
+                >Resume</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://www.linkedin.com/in/santhosh-pattamudu-manoharan/"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a
+                role="button"
+                href="{% url 'blog:all_blogs' %}"
+                class="btn btn-primary"
+                >Blog</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     {%block content%}{%endblock%}
-
-   
   </body>
 </html>
