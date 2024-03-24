@@ -1,6 +1,7 @@
 {% extends 'portfolio/base.html' %} {% block content %} {% load static %}
 
 <br /><br /><br /><br />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-jjJahBnqjzQ+uYGBmzlVFDXaGel9KnA12wn6Rv97mo+SRPAyWmHmjYx5OG/EZB6XtTkC51LfDg3cNmZEaF0FZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div class="container">
   <div class="row justify-content-center mt-5" style="padding-top: 10px">
@@ -16,16 +17,42 @@
         <span class="ml-3 mr-3" style="font-size: 28px">|</span>
         <span style="font-size: 28px">10+ Projects</span>
       </div>
+      <div class="social-icons mt-3">
+        <a href="https://www.linkedin.com/in/santhosh-pattamudu-manoharan/" class="social-icon">
+          <i class="bi bi-linkedin"></i> 
+        </a>
+        
+        <a href="https://github.com/santhosh1299" class="social-icon">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="mailto:santhoshmanoharan.edu@gmail.com"><i class="bi bi-envelope"></i></a>
+      </div>
     </div>
+    <style>
+       .social-icons {
+    margin-top: 10px;
+  }
 
+  .social-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #333; /* Change color as needed */
+    transition: color 0.3s ease; /* Add transition for smooth color change */
+    
+  }
+
+  .social-icon:hover {
+    color: #007bff; /* Change color on hover */
+  }
+    </style>
     <div class="col-md-4 order-md-1 text-center">
       <!-- Modified col-md-6 -->
       <img
         class="img-fluid rounded-circle mb-4"
         src="{% static 'portfolio/santhosh_pic.PNG' %}"
         alt="Santhosh"
-        width="200"
-        height="200"
+        width="290"
+        height="308"
       />
     </div>
   </div>
@@ -486,6 +513,7 @@
 
         .overlay-content {
             color: white;
+            
         }
     </style>
 </head>
@@ -494,10 +522,10 @@
 <!-- Image Section -->
 <div class="image-container">
     <img src="{% static 'portfolio/sanpic_1.jpeg' %}" alt="Full Width Image">
-    <div class="image-overlay">
+    <div class="image-overlay" >
         <div class="overlay-content">
-            <h2>Explore My Highlights</h2>
-            <p>Discover key achievements and insights.</p>
+            <h2 style="font-size: 55px;" ><strong>Explore My Highlights</strong></h2>
+            
         </div>
     </div>
 </div>
@@ -588,7 +616,8 @@
         </div>
         {% if forloop.counter|divisibleby:3 %}
       </div>
-      <div class="col-md-12 d-flex justify-content-between">
+      <div class="col-md-12 d-flex ">
+        
         {% endif %} {% endfor %}
       </div>
     </div>
