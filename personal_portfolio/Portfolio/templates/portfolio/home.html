@@ -1,5 +1,7 @@
 {% extends 'portfolio/base.html' %} {% block content %} {% load static %}
 
+<br><br><br><br>
+
 <div class="container">
   <div class="row justify-content-center mt-5" style="padding-top: 10px">
     <div
@@ -64,23 +66,100 @@
       </div>
     </div>
   </div> -->
+
+</div>
+
+
+
+<br><br><br><br><br>
+<style>
+
+#full-width-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+        }
+
+        #full-width-img {
+    transition: opacity 0.3s ease; /* Apply smooth transition to the opacity property */
+}
+
+</style>
+
+
+<img src="{% static 'portfolio/mountain_crop.jpeg' %}" alt="Full Width Image" id="full-width-img">
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const img = document.getElementById("full-width-img");
+
+    window.addEventListener("scroll", function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const opacity = 1 - (scrollTop / window.innerHeight); // Calculate opacity based on scroll position
+
+        img.style.opacity = opacity; // Apply the opacity to the image
+    });
+});
+</script>
+
+
+<style>
+.col-md-6 {
+  
+  background: linear-gradient(to top, rgba(46, 45, 45, 0.163), rgba(150, 211, 237, 0.409)); /* Transparent gradient */
+  
+  border-radius: 15px; /* Add border radius for rounded corners */
+  padding: 25px; /* Add padding */
+  margin-bottom: 20px; /* Add margin at the bottom */
+  
+  width: calc(50% - 10px); /* Set width of each column */
+   
+
+}
+
+
+
+
+</style>
+
+<div class="container">
+  <div class="row justify-content-center mt-5" style="padding-top: 10px">
+    <!-- <div
+      class="col-md-8 order-md-2 d-flex flex-column justify-content-center align-items-center text-center"
+    > -->
+  <br><br><br><br><br>
   <div class="row mt-5">
     <div class="col-md-6">
       <div class="education border p-3">
         <h2 class="text-center mb-4">
-          <i class="fas fa-graduation-cap"></i> Education Journey
+          <i class="fas fa-graduation-cap"></i> Academics
         </h2>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-content">
               <h3>Master of Science in Data Science</h3>
-              <p>University of Colorado Boulder, Aug 2023 - May 2025</p>
-            </div>
+              <p><strong>University of Colorado Boulder</strong>, Aug 2023 - May 2025</p>
+              <ul>
+                  <li>Statistics Techniques and Application 1 and 2</li>
+                  <li>AI Ethics</li>
+                  <li>Data Mining</li>
+                  <li>Machine Learning</li>
+                  <li>Geospatial Analytics</li>
+              </ul>
+          </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-content">
               <h3>Bachelors in Computer Science</h3>
-              <p>Anna University, Aug 2017 - May 2021</p>
+              <p><strong>Anna University</strong>, Aug 2017 - May 2021</p>
+              <ul>
+                <li>Design Analysis and Algorithms</li>
+                <li>Object Oriented Programming</li>
+                <li>Data Analytics</li>
+                <li>Database Management Systems</li>
+                <li>Artificial Intelligence Foundations</li>
+            </ul>
             </div>
           </div>
         </div>
@@ -90,40 +169,34 @@
     <div class="col-md-6">
       <div class="work-experience border p-3">
         <h2 class="text-center mb-4">
-          <i class="fas fa-briefcase"></i> Work Experience Journey
+          <i class="fas fa-briefcase"></i> Professional Experience
         </h2>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-content">
               <h3>Data Scientist</h3>
               <p>
-                Virtusa Consulting Services Private Limited, Sep 2021 – Jun 2023
+               <strong> Virtusa Consulting Services Pvt Ltd</strong>, Sep 2021 – Jun 2023
               </p>
-              <p style="text-align: justify">
-                Led innovative projects across various domains, specializing in
-                developing AI/ML solutions to enhance outputs and accuracy.
-                Leveraged cloud services and custom models to drive
-                comprehensive reports and streamline operations. Implemented
-                cutting-edge anomaly detection methods to ensure data integrity
-                and maximize efficiency. Developed APIs for seamless model
-                deployment, increasing user interaction and driving business
-                growth. Provided exceptional customer service, understanding
-                client needs and delivering tailored solutions for optimal
-                outcomes.
-              </p>
+              
+                <ul>
+                  <li>Led AI/ML projects across diverse domains, enhancing outputs and accuracy.</li>
+                  <li>Utilized cloud services and custom models for comprehensive reports and streamlined operations.</li>
+                  <li>Implemented cutting-edge anomaly detection methods for data integrity and efficiency.</li>
+                  <li>Developed APIs for seamless model deployment, driving user interaction and business growth.</li>
+                  <li>Provided exceptional customer service, delivering tailored solutions for optimal outcomes.</li>
+              </ul>
+              
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-content">
               <h3>ML Intern</h3>
-              <p>Larson and Toubro Valves Limited, May 2021 – Aug 2021</p>
-              <p style="text-align: justify">
-                Transformed 4 ML research papers into functional code,
-                conceptualizing an automated document data capture solution with
-                PyTorch and OpenCV 3. Achieved an over 80% reduction in data
-                entry time, optimizing data processing workflows for enhanced
-                efficiency.
-              </p>
+              <p><strong>Larson and Toubro Valves Ltd</strong>, May 2021 – Aug 2021</p>
+              <ul>
+                <li>Transformed 4 ML research papers into functional code, pioneering an automated document data capture solution with PyTorch and OpenCV 3.</li>
+                <li>Achieved over an 80% reduction in data entry time, optimizing data processing workflows for unparalleled efficiency.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -161,9 +234,9 @@
         <div class="skill-category">
           <h3>Cloud:</h3>
           <ul class="skill-list">
-            <li class="skill-item">AWS</li>
-            <li class="skill-item">Azure</li>
-            <li class="skill-item">Google Cloud</li>
+            <li class="skill-item">AWS - Sagemaker, Lambda, EC2</li>
+            <li class="skill-item">Azure - Form Recognizer</li>
+            <li class="skill-item">Google Cloud - Compute</li>
           </ul>
         </div>
       </div>
@@ -171,7 +244,7 @@
         <div class="skill-category">
           <h3>Statistics:</h3>
           <ul class="skill-list">
-            <li class="skill-item">Statistical Techniques</li>
+            <li class="skill-item">Hypothesis Testing</li>
           </ul>
         </div>
       </div>
@@ -180,7 +253,7 @@
           <h3>Other Skills:</h3>
           <ul class="skill-list">
             <li class="skill-item">Docker CI/CD pipeline</li>
-            <li class="skill-item">Web Development</li>
+            <li class="skill-item">Web Development - Django, Flask </li>
           </ul>
         </div>
       </div>
@@ -196,8 +269,66 @@
         </div>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
+  <br><br><br>
+  <style>
+   
+   .image-container {
+            text-align: center;
+            position: relative;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 70vh;
+            display: block;
+            margin: 0 auto; /* Center image horizontally */
+        }
+        .card-container {
+            text-align: center;
+            position: absolute;
+            bottom: 20px; /* Position card container at the bottom */
+            width: 100%;
+        }
+        .card {
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent background color */
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            max-width: 40%; /* Set maximum width to fit within image */
+            margin: 0 auto; /* Center card horizontally */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .active {
+            opacity: 1;
+        }
+    </style>
+<div class="image-container">
+  <img src="{% static 'portfolio/sanpic_1.jpeg' %}" alt="Full Width Image">
+  <!-- <div class="card-container" id="card-container">
+      <div class="card active">Proficient in Bridging the Communication Gap Between Technical and Business Teams</div>
+      <div class="card">Skilled in Articulating Complex Technical Concepts to Non-Technical Stakeholders</div>
+      <div class="card">Experienced in Conveying Technical Insights in Layman's Terms for Business Decision-Making</div>
+      <div class="card">Adept at Converting Technical Complexity into Business-Relevant Insights</div>
+  </div> -->
+</div>
+</div>
 
+<script>
+  const cards = document.querySelectorAll('.card');
+  let index = 0;
+
+  function showNextCard() {
+      cards.forEach(card => card.classList.remove('active'));
+      cards[index].classList.add('active');
+      index = (index + 1) % cards.length;
+  }
+
+  setInterval(showNextCard, 1200); // Change card every 3 seconds
+</script>
+
+<br><br>  
+  
   <h2 class="mt-5 text-center">Portfolio</h2>
   <hr />
 
@@ -224,6 +355,9 @@
     </div>
     {% endfor %}
   </div>
+</div>
+</div>
+</div>
 </div>
 
 <style>

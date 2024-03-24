@@ -961,13 +961,13 @@ h3 {
 <h3>Before Cleaning</h3>
 
 <h4>Supervised Learning models will take only labelled data and python only take numerical input.</h4>
-   <img src={% static 'portfolio/NB & DecTree/nb_before.png'' %} alt="api-logo" width="500" height="500">
+   <img src={% static 'portfolio/NB & DecTree/nb_before.png' %} alt="api-logo" width="500" height="500">
    <br>
 
 <h3>After Cleaning</h3>
 
 <h4>All the categorical columns are converted to numerical values.</h4>
-   <img src={% static 'portfolio/NB & DecTree/nb_after.png'' %} alt="api-logo" width="500" height="500">
+   <img src={% static 'portfolio/NB & DecTree/nb_after.png' %} alt="api-logo" width="500" height="500">
    <br>
 
    <h3>Code </h3>
@@ -975,9 +975,31 @@ h3 {
 
    <div>
        <span class="indented">
-       <h4>Code : <a href="https://github.com/santhosh1299/Project/blob/main/Clustering-kmeans.ipynb">Association Rule Mining in R</a></h4>
+       <h4>Code : <a href="https://github.com/santhosh1299/lithium_ion_battery_discharge_prediction/blob/main/NB.ipynb">Naive Bayes</a></h4>
    </span>
+   <h3>Results</h3>
 
+   <br>
+   <p>We noticed that our data had a significant imbalance between classes, meaning some classes were much more prevalent than others. Despite achieving 63% accuracy with a multinomial Naive Bayes model, upon analyzing the confusion matrix, we found discrepancies that raised concerns. To address this, we employed SMOTE, a technique for mitigating class imbalance by generating synthetic samples. However, after implementing SMOTE and retraining the multinomial model, we were disappointed to find a drastic drop in accuracy to only 28%. This outcome puzzled us, leading us to reconsider our approach. We realized that multinomial Naive Bayes is typically suited for text data or categorical data with count frequencies, whereas our data consisted of numerical features. Therefore, we decided to pivot to a Gaussian Naive Bayes model, which is better suited for numerical data. This adjustment was made with the hope of improving our model's performance by aligning it more closely with the nature of our dataset.</p>
+   <h4>Multinomial Naive Bayes model (Accuracy 56%) with imbalanced data</h4>
+   <img src={% static 'portfolio/NB & DecTree/result_nb_1.png' %} alt="api-logo" width="500" height="500">
+   <br>
+   <p>After applying the SMOTE technique to the training data</p>
+   <br>
+   <h4>Multinomial Naive Bayes model (Accuracy 28%) with balanced data</h4>
+   <br>
+
+   <img src={% static 'portfolio/NB & DecTree/result_nb_2.png' %} alt="api-logo" width="600" height="371">
+   <br>
+   <p>The model performed poorly because Standard Multinomial Naive Bayes is suitable for text data or categorical data with count frequencies. So, we have trained the data with Gaussian Naive Bayes model as it takes numerical values  </p>
+   <br>
+   <h4>Gaussian Naive Bayes model (Accuracy 95%) with balanced data</h4>
+   <br>
+
+   <img src={% static 'portfolio/NB & DecTree/result_nb_3.png' %} alt="api-logo" width="600" height="371">
+   <br>
+
+   
 
 </section>
 
