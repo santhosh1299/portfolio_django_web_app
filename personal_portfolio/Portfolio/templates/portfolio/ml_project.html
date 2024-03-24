@@ -975,13 +975,13 @@ h3 {
 
    <div>
        <span class="indented">
-       <h4>Code : <a href="https://github.com/santhosh1299/lithium_ion_battery_discharge_prediction/blob/main/NB.ipynb">Naive Bayes</a></h4>
+       <h4>Code : <a href="https://github.com/santhosh1299/lithium_ion_battery_discharge_prediction/blob/main/naive_bayes_and_decision_tree.ipynb">Naive Bayes</a></h4>
    </span>
    <h3>Results</h3>
 
    <br>
    <p>We noticed that our data had a significant imbalance between classes, meaning some classes were much more prevalent than others. Despite achieving 63% accuracy with a multinomial Naive Bayes model, upon analyzing the confusion matrix, we found discrepancies that raised concerns. To address this, we employed SMOTE, a technique for mitigating class imbalance by generating synthetic samples. However, after implementing SMOTE and retraining the multinomial model, we were disappointed to find a drastic drop in accuracy to only 28%. This outcome puzzled us, leading us to reconsider our approach. We realized that multinomial Naive Bayes is typically suited for text data or categorical data with count frequencies, whereas our data consisted of numerical features. Therefore, we decided to pivot to a Gaussian Naive Bayes model, which is better suited for numerical data. This adjustment was made with the hope of improving our model's performance by aligning it more closely with the nature of our dataset.</p>
-   <h4>Multinomial Naive Bayes model (Accuracy 56%) with imbalanced data</h4>
+   <h4>Multinomial Naive Bayes model (Accuracy 70%) with imbalanced data</h4>
    <img src={% static 'portfolio/NB & DecTree/result_nb_1.png' %} alt="api-logo" width="500" height="500">
    <br>
    <p>After applying the SMOTE technique to the training data</p>
@@ -998,8 +998,16 @@ h3 {
 
    <img src={% static 'portfolio/NB & DecTree/result_nb_3.png' %} alt="api-logo" width="600" height="371">
    <br>
+   <h3>Conclusion</h3>
+   <br>
+   <p>The results of predicting how long batteries will last are really important for different industries. When we know how long a battery will work, we can plan ahead and fix things before they break. This is especially useful for things like planes, cars, and renewable energy sources that rely on batteries. It helps us avoid accidents and saves time and money by fixing things before they break.</p>
 
-   
+<p>But it's not just about fixing things. Knowing how long batteries last helps us use them better. For example, in electric cars, we can make sure batteries are used efficiently and last longer. It also helps us use renewable energy sources, like solar and wind power, more reliably. And in healthcare, it ensures medical devices work when they're needed most.</p>
+
+<p>Overall, predicting battery life helps us work smarter, save money, and keep things running smoothly. By using fancy computer programs and new technology, we can make the world a better place and make sure things keep working for a long time.</p>
+
+
+
 
 </section>
 
@@ -1054,6 +1062,38 @@ h3 {
     <h4>All the categorical columns are converted to numerical values.</h4>
        <img src={% static 'portfolio/NB & DecTree/nb_after.png'' %} alt="api-logo" width="500" height="500">
        <br>
+       <div>
+        <span class="indented">
+        <h4>Code : <a href="https://github.com/santhosh1299/lithium_ion_battery_discharge_prediction/blob/main/naive_bayes_and_decision_tree.ipynb">Decision Tree</a></h4>
+    </span>
+    <h3>Results</h3>
+ 
+     <h4>Decision Tree with Gini as the criteria and other default parameters (Accuracy 98%)</h4>
+    <img src={% static 'portfolio/NB & DecTree/result_dt_1.png' %} alt="api-logo" width="500" height="500">
+    <br>
+    <img src={% static 'portfolio/NB & DecTree/tree_1.png' %} alt="api-logo" width="500" height="500">
+    <p>The tree structure appears overly intricate, featuring an abundance of branches.</p>
+    <br>
+    <h4>Decision Tree with entropy as the criteria and max_depth as 3 (Accuracy 96%)</h4>
+    <img src={% static 'portfolio/NB & DecTree/result_dt_2.png' %} alt="api-logo" width="500" height="500">
+    <br>
+    <img src={% static 'portfolio/NB & DecTree/tree_2.png' %} alt="api-logo" width="500" height="500">
+    <p>The tree complexity is reduced</p>
+    <br>
+    <h4>Decision Tree with entropy as the criteria, max_depth as 3 and max_features as 3 (Accuracy 93%)</h4>
+    <img src={% static 'portfolio/NB & DecTree/result_dt_3.png' %} alt="api-logo" width="500" height="500">
+    <br>
+    <img src={% static 'portfolio/NB & DecTree/tree_3.png' %} alt="api-logo" width="500" height="500">
+    <p>The tree complexity is reduced and the tree looks simple so this will give an generalized and optimal prediction.</p>
+    <br>
+ 
+    <h3>Conclusion</h3>
+    <br>
+    <p>The results of predicting battery life are really important for different industries. When we know the life expectancy of a battery, we can plan ahead and fix things before they break. This is especially useful for things like planes, cars, and renewable energy sources that rely on batteries. It helps us avoid accidents and saves time and money by fixing things before they break.</p>
+    
+    <p>But it's not just about fixing things. Knowing battery life helps us use them better. For example, in electric cars, we can make sure batteries are used efficiently and last longer. It also helps us use renewable energy sources, like solar and wind power, more reliably. And in healthcare, it ensures medical devices work when they're needed most.</p>
+    
+    <p>Overall, predicting battery life helps us work smarter, save money, and keep things running smoothly. By using fancy computer programs and new technology, we can make the world a better place and make sure things keep working for a long time.</p>
     
 
 </section>
