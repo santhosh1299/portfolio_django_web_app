@@ -1057,13 +1057,13 @@ h3 {
     <h3>Before Cleaning</h3>
     
     <h4>Supervised Learning models will take only labelled data and python only take numerical input.</h4>
-       <img src={% static 'portfolio/NB & DecTree/nb_before.png'' %} alt="api-logo" width="500" height="500">
+       <img src={% static 'portfolio/NB & DecTree/nb_before.png'' %} alt="api-logo" width="700" height="700">
        <br>
     
     <h3>After Cleaning</h3>
     
     <h4>All the categorical columns are converted to numerical values.</h4>
-       <img src={% static 'portfolio/NB & DecTree/nb_after.png'' %} alt="api-logo" width="500" height="500">
+       <img src={% static 'portfolio/NB & DecTree/nb_after.png'' %} alt="api-logo" width="700" height="700">
        <br>
 
 <br>       
@@ -1105,8 +1105,112 @@ h3 {
 </section>
 
 <section id="section7">
-    <h2>SVMs</h2>
-    <p>This is the content of Section 4.</p>
+    <h2>SVM</h2>
+    <img src={% static 'portfolio/NB & DecTree/nb_1.jpg' %} alt="api-logo" width="500" height="500">
+    <br>
+    <h3>Overview</h3>
+    <p>Support Vector Machine (SVM) is a powerful supervised machine learning algorithm that is widely used for classification and regression tasks. It belongs to the family of discriminative models and is particularly effective in high-dimensional spaces.</p> 
+    <p>SVM aims to find the optimal hyperplane that best separates data points belonging to different classes by maximizing the margin between them. This approach not only enables SVM to classify new data points accurately but also enhances its robustness against overfitting. With its versatility and ability to handle both linear and non-linear data, SVM has become a cornerstone in various fields such as image classification, text categorization, and bioinformatics.</p>
+    
+    <h3>How SVM Works</h3>
+    <p>SVM works by finding the optimal hyperplane that best separates the data points belonging to different classes. The hyperplane is chosen such that it maximizes the margin between the nearest data points of different classes, known as support vectors. This margin represents the distance between the hyperplane and the support vectors and serves as a measure of the model's generalization capability. SVM achieves this optimization through various techniques such as gradient descent and quadratic programming.</p>
+    
+    <h3>Kernel Functions</h3>
+    <br>
+    <img src={% static 'portfolio/svm/kernel.png' %} alt="api-logo" width="500" height="500">
+    <br>
+    <p>Kernel functions play a crucial role in SVM, especially when dealing with non-linearly separable data. These functions transform the input data into a higher-dimensional space where it becomes linearly separable. Common kernel functions include linear, polynomial, radial basis function (RBF), and sigmoid. By employing appropriate kernel functions, SVM can effectively handle complex data distributions and improve its classification performance.</p>
+    
+    <h3>Optimization</h3>
+    <p>Optimization lies at the heart of SVM, as it involves finding the parameters of the hyperplane that minimize a predefined loss function. This optimization problem can be formulated as a convex optimization task, which allows for efficient and reliable solutions. SVM employs optimization techniques such as gradient descent and quadratic programming to iteratively adjust the parameters until convergence is achieved.</p>
+    
+    <h3>Margin Maximization</h3>
+    <br>
+    <img src={% static 'portfolio/svm/margin.png' %} alt="api-logo" width="500" height="500">
+    <br>
+    <p>One of the key principles of SVM is margin maximization, which aims to maximize the distance between the decision boundary (hyperplane) and the nearest data points of different classes. By maximizing the margin, SVM not only improves its classification accuracy on the training data but also enhances its ability to generalize to unseen data. This margin-based approach makes SVM robust against outliers and noise in the data.</p>
+    
+    <h3>Why They Are Linear Separators</h3>
+    <p>Support Vector Machines (SVMs) are considered linear separators because they aim to find the optimal hyperplane that best separates data points belonging to different classes. This hyperplane is a linear decision boundary in the input space, represented as a line in two dimensions, a plane in three dimensions, and a hyperplane in higher dimensions. SVMs achieve classification by maximizing the margin between this hyperplane and the nearest data points of different classes, known as support vectors. This margin-based approach allows SVMs to effectively classify data points by constructing a linear decision boundary, making them suitable for linearly separable datasets.</p>
+
+    <h3>How the Kernel Works</h3>
+    <p>The kernel function in Support Vector Machines (SVMs) is a mathematical function that computes the dot product between two points in a higher-dimensional space. It allows SVMs to implicitly map the input space into a higher-dimensional feature space without explicitly calculating the transformation.</p>
+    
+
+    <h3>Radial Basis Function (RBF) Kernel:</h3>
+    <p>The Radial Basis Function kernel is defined as:</p>
+    <p>K(x, y) = exp(-γ ||x - y||^2)</p>
+    <p>Where:</p>
+    <ul>
+        <li>x and y are input vectors</li>
+        <li>γ is a parameter that determines the influence of each training example</li>
+        <li>||x - y|| represents the Euclidean distance between vectors x and y</li>
+    </ul>
+
+    <h3>Polynomial Kernel:</h3>
+    <p>The Polynomial kernel is defined as:</p>
+    <p>K(x, y) = (x · y + c)^d</p>
+    <p>Where:</p>
+    <ul>
+        <li>x and y are input vectors</li>
+        <li>c is a constant</li>
+        <li>d is the degree of the polynomial</li>
+    </ul>
+
+
+
+
+    <h3>Importance of Dot Product</h3>
+    <p>The dot product is critical because it captures the similarity or dissimilarity between two points in the input space. By computing the dot product in the higher-dimensional space, the kernel function effectively measures the relationship between data points, enabling SVMs to find complex decision boundaries.</p>
+
+
+    <h3>Applications</h3>
+    <p>SVM finds applications across a wide range of domains due to its versatility and robustness. Some common applications of SVM include:</p>
+    <ul>
+        <li>Image classification</li>
+        <li>Text categorization</li>
+        <li>Handwritten digit recognition</li>
+        <li>Bioinformatics</li>
+        <li>Medical diagnosis</li>
+        <li>Financial forecasting</li>
+    </ul>
+    <p>These applications benefit from SVM's ability to handle high-dimensional data and effectively separate complex patterns.</p>
+    
+    <h3>Advantages and Limitations</h3>
+    <p>SVM offers several advantages, including:</p>
+    <ul>
+        <li>Effective in high-dimensional spaces</li>
+        <li>Robust against overfitting</li>
+        <li>Works well with both linear and non-linear data</li>
+        <li>Ability to capture complex decision boundaries</li>
+        <li>Works well with small to medium-sized datasets</li>
+    </ul>
+    <p>However, SVM also has some limitations:</p>
+    <ul>
+        <li>Can be computationally intensive, especially with large datasets</li>
+        <li>Requires careful selection of kernel function and parameters</li>
+        <li>Does not provide probabilistic outputs directly</li>
+        <li>May struggle with noisy or overlapping data</li>
+        <li>Interpretability of the model may be limited</li>
+    </ul>
+    <p>Overall, while SVM is a powerful and versatile algorithm, it is essential to consider its strengths and limitations when applying it to real-world problems.</p>
+
+    <h2>Data Prep</h2>
+
+    <h3>Before Cleaning</h3>
+    
+    <p>Supervised Learning models will take only labelled data and python only take numerical input.</p>
+       <img src={% static 'portfolio/svm/data_before.png'' %} alt="api-logo" width="700" height="700">
+       <br>
+    
+    <h3>After Cleaning</h3>
+    
+    <p>All the categorical columns are converted to numerical values.</p>
+       <img src={% static 'portfolio/svm/data_after.png'' %} alt="api-logo" width="700" height="700">
+       <br>
+
+
+
 </section>
 
 <section id="section8">
