@@ -249,8 +249,6 @@ h3 {
     <a class="side-heading" href="#section5">NaiveBayes</a>
     <a class="side-heading" href="#section6">DecTrees</a>
     <a class="side-heading" href="#section7">SVMs</a>
-    <a class="side-heading" href="#section8">Regression</a>
-    <a class="side-heading" href="#section9">NN</a>
     <a class="side-heading" href="#section10">Conclusion</a>
 </nav>
 <article>
@@ -285,7 +283,7 @@ h3 {
 </p>
 
     <p>
-        According to Consumer Reports' 2023 Annual Auto Reliability Survey, electric vehicles have 79% reliability issues compared to gasoline cars. Battery-related issues are higher when we look into these issues in depth. Some issues like unexpected drops in driving range and reduced battery performance can be mitigated by predictive maintenance, which is the integration of Remaining Useful Life and discharge capacity prediction. It is very useful in guiding consumers to increase the lifespan and reliability of these batteries. Additionally, it can be integrated with dynamic charging algorithms to adapt charging patterns to ensure that minimizes degradation and maximizes the usable life.
+        According to Consumer Reports' 2023 Annual Auto Reliability Survey, electric vehicles have 79% reliability issues compared to gasoline cars. Battery-related issues are higher when we look into these issues in depth. Some issues like unexpected drops in driving range and reduced battery performance can be mitigated by predictive maintenance, which is the integration of Remaining Useful Battery Life and discharge capacity prediction. It is very useful in guiding consumers to increase the lifespan and reliability of these batteries. Additionally, it can be integrated with dynamic charging algorithms to adapt charging patterns to ensure that minimizes degradation and maximizes the usable life.
     </p>
 
     <br>
@@ -296,17 +294,27 @@ h3 {
 
     <p>This proactive approach empowers stakeholders to implement timely interventions, such as adjusting charging protocols or deploying sophisticated thermal management strategies, to optimize battery performance and reliability. By making informed decisions grounded in comprehensive data analysis, stakeholders ensure the efficient and sustainable operation of lithium-ion battery systems across diverse applications. In essence, the seamless integration of voltage and temperature data not only enhances predictive maintenance capabilities but also lays the foundation for the continued advancement of energy storage technologies, driving innovation and sustainability in the modern era.</p>
 
-        Research Questions:
+    <p>Understanding the battery life of portable devices like smartphones and laptops holds significant importance for users and manufacturers alike. Longer battery life directly enhances user experience by allowing extended usage without frequent charging interruptions, thereby increasing convenience, productivity, and satisfaction. Additionally, battery life serves as a key differentiator among device models in a competitive market, influencing purchasing decisions and brand loyalty. Knowledge of battery life enables users to optimize device usage, conserve power, and plan activities effectively, particularly when away from charging points for extended periods. Longer battery life also contributes to environmental sustainability by reducing electronic waste and encouraging device longevity. Moreover, in emergency situations or for professionals who rely heavily on their devices for work, longer battery life can be critical for communication and task execution. Overall, battery life plays a crucial role in shaping user experiences, product competitiveness, and environmental impact in the realm of portable devices.</p>
+        
+    <h3>Research Questions:</h3>
+
         <ol style="font-size: 1.2em; line-height: 1.6em;">
             
-            <li>Is there a correlation between battery temperature and measured impedance?</li>
-            <li>What is the trend of capacity degradation for Battery #5 #6 #7 over repeated cycles?</li>
-            <li>What is the trend of capacity degradation across batteries from different experimental sets over repeated cycles?</li>
-            <li>How the discharge capacity is associated with battery impedance?</li>
+            <li>Which Battery Groups has the widest range of values in the experiement? </li> 
+            <li>Whether all the battery groups in the dataset has decay phase according to the general assumption?</li> - #due to some gap
+            <li>How the battery life is grouped and does it matches the assumption made by analysing the data?</li>
+            <li>What are the recent news about batteries?</li>
+            <li>Can we predict the battery life capacity based on the parameters like voltage, current and temperature of charge cycles?</li>
+            <li>Compare the discharge capacity and remaining battery life in a timeline and find out patterns?</li>
+            <li>Does lower ambient temperature affects the aging of the batteries?</li>
+            <li>Does the discharge capacity contribute in prediction of remaining useful battery life (BL)?</li>
+            <li>Does the battery parameters improve if we use proper intervals</li>
+
+
             <li>How does the discharge capacity measured at the charger vary during charge cycles for Battery group 1?</li>
             <li>Does lower ambient temperature affects the aging of the batteries?</li>
-            <li>Find out what causes the difference in the median RUL of battery group #5 and #3?</li>
-            <li>Can we predict remaining useful life (RUL) based on observed capacity fade?</li>
+            <li>Find out what causes the difference in the median BL of battery group #5 and #3?</li>
+            <li>Does the discahrge capacity contribute in prediction of remaining useful battery life (BL)?</li>
             <li>How does ambient temperature vary during different operational profiles?</li>
             <li>Why some battery groups have extreme values while others are in IQR?</li>
         </ol>
@@ -455,19 +463,19 @@ h3 {
     <ol style="font-size: 1.2em; line-height: 1.6em;">
         <br>
 
-        <h4>Remaining Useful Life(Minutes) of All Battery Groups</h4>
+        <h4>Remaining Useful Battery Life(Minutes) of All Battery Groups</h4>
         <br>
-        <p>The median of RUL among all the different battery groups. The battery group 5 has the highest and battery group 3 has the lowest.</p>
+        <p>The median of battery life among all the different battery groups. The battery group 5 has the highest and battery group 3 has the lowest.</p>
         <img src={% static 'portfolio/eda/1.png' %} alt="api-logo" width="941" height="263">
          <br>
-        <h4>Remaining Useful Life(Minutes) Distribution Analysis</h4>
+        <h4>Remaining Useful Battery Life(Minutes) Distribution Analysis</h4>
         <br>
         <p>The battery groups 5 and 6 have values from both extreme values. This indicates that there must be a gap during the experiment.</p>
         <img src={% static 'portfolio/eda/2.png' %} alt="api-logo" width="941" height="263">
         <br>
-        <h4>Trend Analysis of Remaining Useful Life(Minutes) During The Experiment</h4>
+        <h4>Trend Analysis of Remaining Useful Battery Life(Minutes) During The Experiment</h4>
         <br>
-        <p>Analysing the trend of the median Remaining Useful Life(Minutes), it is observed from the visualisation the group 5 and 6 have growing trend</p>
+        <p>Analysing the trend of the median Remaining Useful Battery Life(Minutes), it is observed from the visualisation the group 5 and 6 have growing trend</p>
         <img src={% static 'portfolio/eda/3.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Indepth Analysis on Group 5 and 6</h4>
@@ -475,9 +483,9 @@ h3 {
         <p>On indepth analysis of battery group 5 and 6 it is confirmed that there was a gap in both experiment groups which is the main reason for the increase in the median remaining useful life.</p>
         <img src={% static 'portfolio/eda/4.png' %} alt="api-logo" width="941" height="263">
         <br> 
-        <h4>Clustering Battery Groups on Discharge Capacity and Remaining Useful Life(Minutes)</h4>
+        <h4>Clustering Battery Groups on Discharge Capacity and Remaining Useful Battery Life(Minutes)</h4>
         <br>
-        <p>On clustering, it can be observed that the RUL and discharge capacity are correlated to eachother.</p>
+        <p>On clustering, it can be observed that the battery life and discharge capacity are correlated to eachother.</p>
         <img src={% static 'portfolio/eda/5.png' %} alt="api-logo" width="941" height="263">
         <br>
         <h4>Discharge Capacity Distribution Analysis</h4>
@@ -485,7 +493,7 @@ h3 {
         <p>The battery groups 4 and 8 have values from both extreme values. This indicates that it needs an further analysis to find more about the discharge </p>
         <img src={% static 'portfolio/eda/6.png' %} alt="api-logo" width="941" height="263">
         <br>
-        <h4>Comparison of Discharge Capacity with that of Remaining Useful Life (Minutes) of Battery #33</h4>
+        <h4>Comparison of Discharge Capacity with that of Remaining Useful Battery Life (Minutes) of Battery #33</h4>
         <br>
         <p>One interesting dip has been observed in the discharge capacity, it must be an outlier or some interesting pattern which needed to explored to find the reason about the dip.</p>
         <img src={% static 'portfolio/eda/7.png' %} alt="api-logo" width="941" height="263">
@@ -500,9 +508,9 @@ h3 {
         <p>It can be observed the correlation between the current load and the temperature</p>
         <img src={% static 'portfolio/eda/9.png' %} alt="api-logo" width="941" height="263">
         <br>
-        <h4>Temperature vs Remaining Useful Life(Minutes)</h4>
+        <h4>Temperature vs Remaining Useful Battery Life(Minutes)</h4>
         <br>
-        <p>Another interesting observation about the battery group 7 which has higher median RUL within 10deg celsius</p>
+        <p>Another interesting observation about the battery group 7 which has higher median battery life within 10deg celsius</p>
         <img src={% static 'portfolio/eda/10.png' %} alt="api-logo" width="941" height="263">
         <br>
         
@@ -671,10 +679,10 @@ h3 {
 
       <h3>Results</h3>
       <br>
-<p>In the course of our analysis, particular emphasis was placed on the pivotal role of voltage and battery attributes. To illuminate our findings, we employed K-means clustering to discern distinct patterns within our dataset. Leveraging the resulting clusters, we embarked on a process of discretizing our output variables, notably the Remaining Useful Life (RUL) and discharge capacity. With a silhouette score of 11 indicating well-defined clusters, we juxtaposed the clustering outcomes alongside the RUL and discharge capacity values in a scatter plot. This strategic visualization allowed for a comprehensive examination of how these values are clustered and their interrelation within the broader dataset. By integrating clustering results with output variable discretization, we have gained valuable insights into the intricate relationships between input and output variables. This approach not only facilitates the identification of underlying patterns but also enhances our understanding of how these variables contribute to the overall clustering structure, thereby enriching the depth of our analysis and guiding informed decision-making processes.</p>
+<p>In the course of our analysis, particular emphasis was placed on the pivotal role of voltage and battery attributes. To illuminate our findings, we employed K-means clustering to discern distinct patterns within our dataset. Leveraging the resulting clusters, we embarked on a process of discretizing our output variables, notably the Remaining Useful Battery Life (RUL) and discharge capacity. With a silhouette score of 11 indicating well-defined clusters, we juxtaposed the clustering outcomes alongside the battery life and discharge capacity values in a scatter plot. This strategic visualization allowed for a comprehensive examination of how these values are clustered and their interrelation within the broader dataset. By integrating clustering results with output variable discretization, we have gained valuable insights into the intricate relationships between input and output variables. This approach not only facilitates the identification of underlying patterns but also enhances our understanding of how these variables contribute to the overall clustering structure, thereby enriching the depth of our analysis and guiding informed decision-making processes.</p>
 
         <br>
-        <h4 style="text-align: center;" >Histogram of RUL </h4>
+        <h4 style="text-align: center;" >Histogram of Battery Life </h4>
       <img src={% static 'portfolio/clustering/hist.png' %} alt="api-logo" width="500" height="392">
       <br>
       <p>It can be inferred from the above chart that, we can start with having 4 clusters and perform kmeans.</p>
@@ -691,7 +699,7 @@ h3 {
       <p>The output for the K Value (4), inferred from the histogram above</p>
       <img src={% static 'portfolio/clustering/kmeans_4.png' %} alt="api-logo" width="941" height="263">
       <br>
-      <p>On comparing the clusters with the RUL category and the discharge capacity plot, it shows that with the input fed we can predict the discharge capacity and the RUL category</p>
+      <p>On comparing the clusters with the Battery Life category and the discharge capacity plot, it shows that with the input fed we can predict the discharge capacity and the Battery Life category</p>
 
       
       <p><p>The output for the K Value (11), inferred from the Silhoutte method above</p></p>
@@ -725,8 +733,8 @@ h3 {
       <br>
      <p>This is similar to the clusters based on the Kmeans clustering but since the K value is 6 it has split some clusters providing some valid insights for the data discretization process.</p>
       <h3>Conclusion</h3>
-      <p>Integrating clustering analysis into our modeling framework not only provided valuable insights into battery performance but also significantly enriched our predictive capabilities for both Remaining Useful Life (RUL) and discharge capacity. By stratifying the data into distinct clusters based on similarities in key features, we were able to develop cluster-specific predictive models tailored to the unique degradation patterns observed within each cluster. This approach not only enhanced the accuracy of our RUL predictions but also enabled more precise estimates of discharge capacity over time. For instance, clusters exhibiting accelerated degradation rates were characterized by distinct sets of predictive variables, allowing us to identify early warning signs of capacity loss and predict RUL more accurately than traditional methods.</p>
-      <p>Furthermore, the clustering analysis facilitated the identification of critical features driving variations in both RUL and discharge capacity across different battery states. By isolating the most influential variables within each cluster, we were able to refine our predictive models and capture subtle nuances in battery degradation dynamics more effectively. This comprehensive understanding of the underlying factors influencing RUL and discharge capacity enabled us to develop predictive models that are not only more accurate but also more robust to real-world variability. As a result, our approach holds immense promise for optimizing battery management strategies and prolonging the operational lifespan of battery systems in diverse applications, ranging from electric vehicles to renewable energy storage.</p>
+      <p>Integrating clustering analysis into our modeling framework not only provided valuable insights into battery performance but also significantly enriched our predictive capabilities for both Remaining Useful Battery Life (RUL) and discharge capacity. By stratifying the data into distinct clusters based on similarities in key features, we were able to develop cluster-specific predictive models tailored to the unique degradation patterns observed within each cluster. This approach not only enhanced the accuracy of our battery life predictions but also enabled more precise estimates of discharge capacity over time. For instance, clusters exhibiting accelerated degradation rates were characterized by distinct sets of predictive variables, allowing us to identify early warning signs of capacity loss and predict battery life more accurately than traditional methods.</p>
+      <p>Furthermore, the clustering analysis facilitated the identification of critical features driving variations in both battery life and discharge capacity across different battery states. By isolating the most influential variables within each cluster, we were able to refine our predictive models and capture subtle nuances in battery degradation dynamics more effectively. This comprehensive understanding of the underlying factors influencing battery life and discharge capacity enabled us to develop predictive models that are not only more accurate but also more robust to real-world variability. As a result, our approach holds immense promise for optimizing battery management strategies and prolonging the operational lifespan of battery systems in diverse applications, ranging from electric vehicles to renewable energy storage.</p>
 
 
 
@@ -1130,6 +1138,7 @@ h3 {
     <br>
     <p>One of the key principles of SVM is margin maximization, which aims to maximize the distance between the decision boundary (hyperplane) and the nearest data points of different classes. By maximizing the margin, SVM not only improves its classification accuracy on the training data but also enhances its ability to generalize to unseen data. This margin-based approach makes SVM robust against outliers and noise in the data.</p>
     
+
     <h3>Why They Are Linear Separators</h3>
     <p>Support Vector Machines (SVMs) are considered linear separators because they aim to find the optimal hyperplane that best separates data points belonging to different classes. This hyperplane is a linear decision boundary in the input space, represented as a line in two dimensions, a plane in three dimensions, and a hyperplane in higher dimensions. SVMs achieve classification by maximizing the margin between this hyperplane and the nearest data points of different classes, known as support vectors. This margin-based approach allows SVMs to effectively classify data points by constructing a linear decision boundary, making them suitable for linearly separable datasets.</p>
 
@@ -1156,6 +1165,17 @@ h3 {
         <li>c is a constant</li>
         <li>d is the degree of the polynomial</li>
     </ul>
+    <br>
+    <h4>Example of Casting a 2D point and casting into 6D using Polynomial Kernel</h4>
+<br>    
+
+<img src={% static 'portfolio/svm/2d_1.png' %} alt="api-logo" width="500" height="500">
+
+<img src={% static 'portfolio/svm/2d_2.png' %} alt="api-logo" width="500" height="700">
+
+
+
+
 
 
 
@@ -1209,23 +1229,99 @@ h3 {
        <img src={% static 'portfolio/svm/data_after.png'' %} alt="api-logo" width="700" height="700">
        <br>
 
+       <h3>Code </h3>
 
+
+       <div>
+           <span class="indented">
+           <h4>Code : <a href="https://github.com/santhosh1299/lithium_ion_battery_discharge_prediction/blob/main/svm.ipynb">Support Vector Machine</a></h4>
+       </span>
+<br><br>
+       <h3>Results</h3>
+ <br>
+    <h4>Linear Kernel -  Accuracy 96.9%</h4>
+      <img src={% static 'portfolio/svm/linear.png' %} alt="api-logo" width="500" height="500">
+      <br>
+      <br>
+      <h4>Polynomial Kernel (C=1)  -  Accuracy 97.8%</h4>
+      <img src={% static 'portfolio/svm/poly_1.png' %} alt="api-logo" width="500" height="500">
+      <br>
+      <h4>Polynomial Kernel (C=0.1)  -  Accuracy 97.4% </h4>
+      <img src={% static 'portfolio/svm/poly_0.1.png' %} alt="api-logo" width="500" height="500">
+      <br>
+      <br>
+      <h4>Polynomial Kernel (C=10)  -  Accuracy 98.01%</h4>
+      <img src={% static 'portfolio/svm/poly_10.png' %} alt="api-logo" width="500" height="500">
+      <br>
+      <br>
+      <h4>RBF Kernel (C=1)  -  Accuracy 97.1%</h4>
+      <img src={% static 'portfolio/svm/rbf_1.png' %} alt="api-logo" width="500" height="500">
+      <br>
+      <br>
+      <h4>RBF Kernel (C=0.1)  -  Accuracy 95.8% </h4>
+      <img src={% static 'portfolio/svm/rbf_0.1.png' %} alt="api-logo" width="500" height="500">
+      <br>
+      <br>
+      <h4>RBF Kernel (C=10)  -  Accuracy 95.8% </h4>
+      <img src={% static 'portfolio/svm/rbf_10.png' %} alt="api-logo" width="500" height="500">
+      <br>
+      <br>
+      <h3>Visualisation of Best model with Polynomial Kernel C=10</h3>
+      <img src={% static 'portfolio/svm/output_1.png' %} alt="api-logo" width="500" height="500">
+      <br>
+
+  <p>The results of our analysis demonstrate the remarkable efficacy of Support Vector Machine (SVM) algorithms in predicting battery life categories within an imbalanced dataset:</p>
+
+  <p>1. SVM outperformed Decision Trees significantly, even without employing techniques like Synthetic Minority Over-sampling Technique (SMOTE) to address class imbalance.</p>
+  
+  <p>2. Different kernels and regularization parameters had varying impacts on SVM's performance:
+    <ul>
+      <li>Polynomial kernels, especially with ( C = 10 ), achieved exceptional accuracy, capturing complex nonlinear relationships inherent in battery life prediction.</li>
+      <li>The radial basis function (RBF) kernel, while slightly less accurate, demonstrated the ability to handle nonlinearity in the data.</li>
+      <li>Fine-tuning the regularization parameter ( C ) proved crucial, with lower values resulting in decreased accuracy, emphasizing the importance of controlling model complexity.</li>
+    </ul>
+  </p>
+      <h3>Conclusion</h3>
+      <br>
+      <p>In conclusion, SVM emerges as a formidable choice for predicting battery life categories, particularly when confronted with imbalanced datasets. Its versatility, coupled with the ability to fine-tune hyperparameters for optimal performance, positions SVM as a valuable tool in addressing real-world challenges in predictive modeling. These findings underscore the potential of SVM algorithms to drive insights and advancements in various domains reliant on accurate predictive analytics.</p>
+      <p>Further research could explore the integration of SVM with other advanced techniques, such as ensemble learning or deep learning, to enhance predictive performance and address more complex predictive tasks in the domain of battery life prediction.</p>
 
 </section>
 
-<section id="section8">
-    <h2>Regression</h2>
-    <p>This is the content of Section 4.</p>
-</section>
 
-<section id="section9">
-    <h2>NN</h2>
-    <p>This is the content of Section 4.</p>
-</section>
 
 <section id="section10">
     <h2>Conclusion</h2>
-    <p>This is the content of Section 4.</p>
+
+<p>As lithium-ion batteries continue to dominate the energy landscape, their widespread adoption and ongoing technological advancements position them as the primary energy storage solution for the foreseeable future, shaping the trajectory of energy storage and powering innovations across industries for the next decade.</p>
+
+<img src={% static 'portfolio/lithium_usage.png' %} alt="api-logo" width="500" height="500">
+      <br>    
+
+<p>We found many interesting insight about the lithium ion batteries and how the battery groups in the dataset relate to each other to understand the dataset to improve the preprocessing based on that. Also there are some practical knowledge about machine learning models like decision tree and naive bayes performs bad with imbalanced data and the SVM performed well without performing SMOTE. </p>
+
+<p>In the experiment, battery groups 5 and 6 exhibited the widest range of values, indicating significant variability in their performance metrics across different experiments. This variability could be attributed to factors such as varying experimental conditions, different testing environments, or fluctuations in battery composition. The observed spread in data underscores the importance of conducting thorough and consistent experiments to obtain reliable results. By acknowledging the influence of experimental factors on battery performance, researchers can better interpret and contextualize the observed variations, leading to more robust conclusions and insights into battery behavior.</p>
+
+<p>Notably, battery groups 5 and 6 displayed a different trend than the general assumption of experiencing a decay phase. Instead of exhibiting a gradual decline in performance over time, these groups showed an improvement in battery parameters between experiments. This unexpected finding challenges the conventional understanding of battery behavior and raises intriguing questions about the underlying mechanisms driving these trends. Possible explanations could include factors such as battery conditioning, environmental conditions, or variations in manufacturing processes. By delving deeper into the factors influencing battery performance, researchers can uncover valuable insights into the dynamics of battery behavior and potentially identify novel strategies for improving battery longevity and efficiency.</p>
+
+<p>Regarding battery life categorization, while the data initially aligned with assumptions, further analysis revealed discrepancies between algorithmic suggestions and visual inspection. Despite clustering algorithms proposing around 11 classes, visual examination showed that these additional classes overlapped with existing ones, suggesting redundancy or ambiguity in the classification scheme. This discrepancy underscores the importance of human oversight and domain knowledge in data analysis, as automated algorithms may not always capture the nuances and context-specific considerations inherent in complex datasets. By integrating algorithmic outputs with expert judgment and visual inspection, researchers can refine classification schemes to better reflect the underlying structure and patterns in the data, enhancing the interpretability and utility of the analysis results.</p>
+
+<p>Recent news about batteries provided valuable insights into current trends and developments in battery technology, highlighting a growing focus on improving battery performance and efficiency in various electronic devices. Keywords such as "meta quest," "pixel," "watch," and "Samsung Galaxy" suggest a particular interest in battery advancements for emerging technologies such as virtual reality headsets, smartphones, smartwatches, and other portable devices. These findings not only inform researchers about the latest developments in battery technology but also shed light on potential areas for future research and innovation. By staying abreast of recent advancements and trends, researchers can identify emerging opportunities and challenges in battery research and contribute to advancements in the field.</p>
+
+<p>Moving forward, predicting battery life capacity based on parameters such as voltage, current, and temperature of charge cycles holds promise for optimizing battery performance and informing decision-making in various applications. By leveraging machine learning techniques such as decision trees, Naive Bayes, and SVMs, researchers can develop predictive models that provide valuable insights into expected battery life based on input parameters. These models offer valuable tools for optimizing battery performance and informing decision-making in various applications, from consumer electronics to renewable energy systems. By harnessing the power of machine learning, researchers can unlock new insights into battery behavior and develop strategies to enhance the efficiency and reliability of battery-powered systems.</p>
+
+<p>Comparing discharge capacity and remaining battery life over time revealed intriguing patterns where proper interval usage led to capacity increases. This observation highlights the importance of usage patterns and maintenance practices in preserving battery performance and longevity. By adopting strategies that promote optimal usage intervals and minimize stress on battery systems, users can maximize the lifespan and efficiency of their devices. Furthermore, these findings underscore the potential benefits of proactive battery management practices in mitigating performance degradation and extending battery life in portable devices. By understanding the impact of usage patterns on battery performance, researchers can develop strategies to optimize battery operation and enhance the reliability of battery-powered systems in various applications.</p>
+
+<p>Concerning ambient temperature, lower temperatures were found to positively affect battery aging, while the discharge capacity alone was not a significant predictor of remaining useful battery life. This finding underscores the complex interplay of environmental factors and battery performance, highlighting the need for comprehensive analysis approaches that consider multiple variables. By understanding the impact of ambient temperature on battery aging and performance, researchers can develop strategies to mitigate temperature-related degradation and optimize battery operation in diverse environmental conditions. By considering the broader context of environmental factors, researchers can gain deeper insights into the factors influencing battery behavior and develop strategies to optimize battery performance and reliability in real-world applications.</p>
+
+<h3>Future Scope</h3>
+<br><br>
+
+<p>The future scope of this project encompasses the integration of advanced predictive modeling techniques, particularly neural networks, to forecast battery cycles based on existing parameters. By expanding the analytical toolkit to include sophisticated machine learning algorithms, such as deep learning models, researchers can unlock deeper insights into battery behavior and performance. Neural networks offer the ability to capture complex relationships and nonlinear dependencies within the data, enabling more accurate and robust predictions of battery cycles.Moreover, the incorporation of neural network-based prediction models opens up opportunities for real-time monitoring and adaptive management of battery systems. By deploying predictive models in conjunction with sensor networks, researchers can continuously monitor battery health and performance, anticipate potential failures or degradation, and implement proactive maintenance strategies. This proactive approach to battery management can minimize downtime, optimize usage patterns, and extend battery lifespan, ultimately leading to more reliable and efficient energy storage solutions.</p>
+
+
+
+
 </section>
 </article>
 {% endblock %}
