@@ -1112,11 +1112,11 @@ h3 {
     <img src={% static 'portfolio/NB & DecTree/nb_1.jpg' %} alt="api-logo" width="500" height="500">
     <br>
     <h3>Overview</h3>
-    <p>Support Vector Machine (SVM) is a powerful supervised machine learning algorithm that is widely used for classification and regression tasks. It belongs to the family of discriminative models and is particularly effective in high-dimensional spaces.</p> 
-    <p>SVM aims to find the optimal hyperplane that best separates data points belonging to different classes by maximizing the margin between them. This approach not only enables SVM to classify new data points accurately but also enhances its robustness against overfitting. With its versatility and ability to handle both linear and non-linear data, SVM has become a cornerstone in various fields such as image classification, text categorization, and bioinformatics.</p>
-    
+    <p>Support Vector Machine (SVM) is a powerful supervised machine learning algorithm that is widely used for classification and regression tasks, it is mainly used in image processing.</p> 
+    <p>SVM aims to find the optimal hyperplane that best separates data points belonging to different classes by maximizing the margin between them.This not allows the SVM to classify the data but also this prevents the model from overfitting, to the high variance of the data.</p>
+    <br>
     <h3>How SVM Works</h3>
-    <p>SVM works by finding the optimal hyperplane that best separates the data points belonging to different classes. The hyperplane is chosen such that it maximizes the margin between the nearest data points of different classes, known as support vectors. This margin represents the distance between the hyperplane and the support vectors and serves as a measure of the model's generalization capability. SVM achieves this optimization through various techniques such as gradient descent and quadratic programming.</p>
+    <p>SVM works by finding the optimal hyperplane that best separates the data points belonging to different classes. The hyperplane is chosen such that it maximizes the margin between the nearest data points of different classes, known as support vectors. This margin represents the distance between the hyperplane and the support vectors and serves as a measure of the model's generalization capability. This model acheives this by optimzation methods like gradient descent.</p>
     
     <h3>Kernel Functions</h3>
     <br>
@@ -1189,18 +1189,18 @@ h3 {
         <li>Medical diagnosis</li>
         <li>Financial forecasting</li>
     </ul>
-    <p>These applications benefit from SVM's ability to handle high-dimensional data and effectively separate complex patterns.</p>
+    <p>Due to its ability to handle imbalanced data, SVM was the best performing model for this battery life prediction compared to the other models that was trained on the same data.</p>
     
-    <h3>Advantages and Limitations</h3>
-    <p>SVM offers several advantages, including:</p>
+    <h3>Advantages of SVM</h3>
+
     <ul>
         <li>Effective in high-dimensional spaces</li>
-        <li>Robust against overfitting</li>
+        <li>Robust against overfitting- robust to outliers</li>
         <li>Works well with both linear and non-linear data</li>
-        <li>Ability to capture complex decision boundaries</li>
-        <li>Works well with small to medium-sized datasets</li>
+        <li>Ability to capture complex classifications</li>
+        <li>Works well with small datasets</li>
     </ul>
-    <p>However, SVM also has some limitations:</p>
+    <h3>Disadvantages of SVM</h3>
     <ul>
         <li>Can be computationally intensive, especially with large datasets</li>
         <li>Requires careful selection of kernel function and parameters</li>
@@ -1208,7 +1208,7 @@ h3 {
         <li>May struggle with noisy or overlapping data</li>
         <li>Interpretability of the model may be limited</li>
     </ul>
-    <p>Overall, while SVM is a powerful and versatile algorithm, it is essential to consider its strengths and limitations when applying it to real-world problems.</p>
+    <p>Overall, while SVM is a powerful and versatile algorithm. I have an experience of where SVM took around 2 hours to train on a large dataset.</p>
 
     <h2>Data Prep</h2>
 
@@ -1265,7 +1265,7 @@ h3 {
       <img src={% static 'portfolio/svm/output_1.png' %} alt="api-logo" width="500" height="500">
       <br>
 
-  <p>The results of our analysis demonstrate the remarkable efficacy of Support Vector Machine (SVM) algorithms in predicting battery life categories within an imbalanced dataset:</p>
+  <p>The results of our analysis demonstrate the ability of Support Vector Machine (SVM) algorithms in predicting battery life categories within an imbalanced dataset:</p>
 
   <p>1. SVM outperformed Decision Trees significantly, even without employing techniques like Synthetic Minority Over-sampling Technique (SMOTE) to address class imbalance.</p>
   
@@ -1306,7 +1306,7 @@ We also looked at recent news about batteries. It seems like there's a lot of in
 <h3>Future Scope</h3>
 <br>
 
-<p>The future scope of this project is to the integration of advanced predictive modeling techniques, particularly neural networks, to forecast battery cycles based on existing parameters. By expanding the analytical toolkit to include complex algorithms, such as deep learning models, we can unlock deeper insights into battery behavior and performance. Neural networks offer the ability to capture complex relationships and nonlinear dependencies within the data, enabling more accurate and robust predictions of battery cycles.Moreover,it opens up opportunities for real-time monitoring and adaptive management of battery systems. By deploying predictive models in sensor networks, we can continuously monitor battery health and performance, anticipate potential failures or degradation, and implement proactive maintenance strategies. This proactive approach to battery management can minimize downtime, optimize usage patterns, and extend battery lifespan, ultimately leading to more reliable and efficient energy storage solutions.</p>
+<p>The future scope of this project is the integration of advanced predictive modeling techniques, particularly neural networks, to forecast battery cycles based on existing parameters. By expanding the analytical toolkit to include complex algorithms, such as deep learning models, we can unlock deeper insights into battery behavior and performance. Neural networks offer the ability to capture complex relationships and nonlinear dependencies within the data, enabling more accurate and robust predictions of battery cycles.Moreover,it opens up opportunities for real-time monitoring and adaptive management of battery systems. By deploying predictive models in sensor networks, we can continuously monitor battery health and performance, anticipate potential failures or degradation, and implement proactive maintenance strategies. This proactive approach to battery management can minimize downtime, optimize usage patterns, and extend battery lifespan, ultimately leading to more reliable and efficient energy storage solutions.</p>
 
 
 
